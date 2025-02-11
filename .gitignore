@@ -1,0 +1,13 @@
+node_modules
+~*
+*.png
+*.jpeg
+*.jpg
+*.mp4
+*.mp3
+.env
+*.rar
+*.zip
+nohup.out
+*.7z
+*.exe
