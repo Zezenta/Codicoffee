@@ -71,3 +71,136 @@ section {
     height: 50px;
     border-radius: 50%;
 }
+/* Estilos globales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #333;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Presentación */
+.presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    background-color: #222;
+    color: white;
+}
+
+/* Texto de presentación */
+.presentation .text h2 {
+    font-size: 28px;
+}
+
+.presentation .text p {
+    font-size: 16px;
+    max-width: 400px;
+}
+
+.icon {
+    margin-top: 20px;
+}
+
+/* Nuestros Servicios */
+.services {
+    background-color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.service-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.card h3 {
+    margin-top: 10px;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+}
+
+/* Media Query para versión de escritorio */
+@media (min-width: 768px) {
+    .card {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 400px;
+        height: 200px;
+        text-align: center;
+    }
+
+    .presentation {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+        min-height: 70vh; /* Ocupa el 80% de la altura de la pantalla */
+    }
+
+    .service-cards {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
