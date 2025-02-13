@@ -1,4 +1,3 @@
-
 html {
     box-sizing: border-box;
 }
@@ -7,97 +6,156 @@ html {
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
     background-color: rgb(166, 166, 166);
 }
+
+.main {
+    padding: 10px;
+}
+
+/* PORTFOLIO */
 main {
-    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
     background: white;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 section {
     padding: 50px 20px;
+    border-bottom: 1px solid #ddd;
 }
 
-/* -- header --*/
-.header__navbar {
+/* PORTFOLIO */
+.portfolio {
+    text-align: center;
+    background-color: #444;
+    color: #fff;
+}
+.portfolio__article-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+.portfolio__article {
+    background: #ecf0f1;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.about {
+    text-align: center;
+}
+.about__members-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.about__members {
+    background: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about__members img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+/* Estilos globales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px 0px 20px;
+    padding: 15px 20px;
     background-color: #333;
-    color: #fff;
-    border-bottom: 0.5px solid #ffffff7b;
+    color: white;
 }
-.header__logo {
+
+.logo {
     font-size: 24px;
     font-weight: bold;
 }
-.header__links-container {
+
+.nav-links {
     list-style: none;
     display: flex;
     gap: 15px;
 }
-.header__links-container a {
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
     color: white;
     text-decoration: none;
 }
-.header__links-container a:hover {
+
+.nav-links a:hover {
     text-decoration: underline;
 }
-/* -- header ends --*/
-
 
 /* Presentación */
 .presentation {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
     text-align: center;
-    background-color: #333;
+    padding: 40px;
+    background-color: #222;
     color: white;
-    min-height: 70vh;
 }
-.presentation__text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 20px;
+
+/* Texto de presentación */
+.presentation .text h2 {
+    font-size: 28px;
 }
-.presentation__text h2 {
-    font-size: 3rem;
-    margin: 0;
-}
-.presentation__text p {
+
+.presentation .text p {
     font-size: 16px;
     max-width: 400px;
 }
-.presentation__icon-container {
+
+.icon {
     margin-top: 20px;
 }
-/* Presentación ends*/
 
-
-/* Services */
+/* Nuestros Servicios */
 .services {
     background-color: white;
     padding: 40px;
     text-align: center;
 }
-.services__title {
+
+.services h2 {
     font-size: 28px;
     margin-bottom: 20px;
 }
-.service__cards-container {
+
+.service-cards {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
 }
-.service__card {
+
+.card {
     background-color: #333;
     color: white;
     padding: 20px;
@@ -105,162 +163,44 @@ section {
     width: 300px;
     text-align: center;
 }
-.service__cards h3 {
+
+.card h3 {
     margin-top: 10px;
 }
-.service__cards p {
+
+.card p {
     font-size: 14px;
 }
-.service__circle {
+
+.circle {
     width: 50px;
     height: 50px;
     background-color: gray;
     border-radius: 50%;
     margin: 0 auto 10px;
 }
-/* Services ends*/
 
-
-/* -- PORTFOLIO -- */
-.portfolio {
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 50px;
-    row-gap: 30px;
-}
-.portfolio__title {
-    text-align: center;
-    margin: 0;
-}
-.portfolio__articles-container {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(200px, 280px));
-    grid-template-rows: repeat(2, minmax(0, 200px));
-    gap: 20px;
-}
-.portfolio__article {
-    background: #ecf0f1;
-    border-radius: 8px;
-    width: 100%;
-    height: 100%;
-}
-/* -- PORTFOLIO ENDS --*/
-
-
-/* -- ABOUT --*/
-.about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.about__members-container {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-}
-.about__members {
-    background: #333;
-    padding: 25px 25px 0px 25px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 400px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 20px;
-}
-.about__info-container {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 10px;
-}
-.about__members h3 {
-    margin: 0;
-}
-.about__members img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-.about__members ul {
-    margin: 0;
-    list-style: none;
-    margin-bottom: 12px;
-}
-.about__members ul li {
-    margin-bottom: 13px;
-}
-/* -- ABOUT ENDS --*/
-
-
-
+/* Media Query para versión de escritorio */
 @media (min-width: 768px) {
+    .card {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 400px;
+        height: 200px;
+        text-align: center;
+    }
+
     .presentation {
         flex-direction: row;
         justify-content: space-around;
         text-align: left;
-    }
-    .presentation__text {
-        align-items: flex-start;
-    }
-    
-    .services {
-        min-height: 80vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .service__cards-container {
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
+        min-height: 70vh; /* Ocupa el 80% de la altura de la pantalla */
     }
 
-    .portfolio {
-        flex-direction: row-reverse;
-        justify-content: space-evenly;
-        column-gap: 30px;
-        min-height: 90vh;
-    }
-    .portfolio__title {
-        font-size: 2rem;
-    }
-    .portfolio__articles-container {
-        gap: 30px;
-    }
-
-    .about__members-container {
+    .service-cards {
         flex-direction: row;
         justify-content: center;
-        column-gap: 30px;
-        width: 100%;
-    }
-    .about__title {
-        font-size: 2rem;
-    }
-    .about__info-container {
-        min-width: 100px;
-    }
-    .about__members {
-        flex-direction: row;
-        min-height: 270px;
-        min-width: 300px;
-        max-width: 450px;
     }
 }
-
