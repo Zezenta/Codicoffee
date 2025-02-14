@@ -98,7 +98,6 @@ section {
 #presentation__small__text{
     font-size: 20px;
 }
-/* Presentación ends*/
 
 
 /* Services */
@@ -249,6 +248,24 @@ section {
     .presentation__text {
         align-items: flex-start;
     }
+
+    .presentation__icon-container{
+        display: flex;
+        justify-content: space-between; /* Espaciado entre ellos */
+        width: 50%;
+    }
+    #presentation__cellphoneSVG {    
+        flex: 1; /* Se distribuirán equitativamente */
+        max-width: 40%; /* Para que no superen juntos el 100% */
+        height: auto;
+    }
+    
+    #presentation__laptopSVG {
+        flex: 1; /* Se distribuirán equitativamente */
+        max-width: 60%; /* Para que no superen juntos el 100% */
+        height: auto;
+    }
+
     
     .services {
         min-height: 60vh;
