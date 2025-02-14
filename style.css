@@ -29,7 +29,8 @@ section {
 
 /* -- header --*/
 .header{
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: -10px; /* Ajusta este valor para que la navbar suba un poco */
     z-index: 1000; /* Asegura que la navbar esté por encima de otros elementos */
     backdrop-filter: blur(5px);
@@ -52,6 +53,7 @@ section {
     list-style: none;
     display: flex;
     gap: 15px;
+    padding-inline-start: 20px;
 }
 .header__links-container a {
     color: white;
@@ -65,6 +67,7 @@ section {
 
 /* Presentación */
 .presentation {
+    padding-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -238,6 +241,7 @@ section {
 
 @media (min-width: 768px) {
     .presentation {
+        height: 80vh;
         flex-direction: row;
         justify-content: space-around;
         text-align: left;
@@ -247,7 +251,7 @@ section {
     }
     
     .services {
-        min-height: 80vh;
+        min-height: 60vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -269,7 +273,7 @@ section {
         font-size: 2rem;
     }
     .portfolio__articles-container {
-        gap: 30px;
+        width: 35%; /* Ajusta el ancho al 100% del contenedor */
     }
 
     .about__members-container {
