@@ -1,3 +1,10 @@
+:root {
+    --purple: #56087A;
+    --black: #222324;
+    --brown: #6F3624;
+    --blue: #00509C;
+    --white: #E9E9E9;
+}
 
 html {
     box-sizing: border-box;
@@ -21,15 +28,22 @@ section {
 }
 
 /* -- header --*/
+.header{
+    position: sticky;
+    top: -10px; /* Ajusta este valor para que la navbar suba un poco */
+    z-index: 1000; /* Asegura que la navbar esté por encima de otros elementos */
+    backdrop-filter: blur(5px);
+}
+
 .header__navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px 0px 20px;
-    background-color: #333;
-    color: #fff;
-    border-bottom: 0.5px solid #ffffff7b;
+    color: #b4adad;
+    position: sticky;
 }
+
 .header__logo {
     font-size: 24px;
     font-weight: bold;
@@ -77,6 +91,9 @@ section {
 }
 .presentation__icon-container {
     margin-top: 20px;
+}
+#presentation__small__text{
+    font-size: 20px;
 }
 /* Presentación ends*/
 
@@ -129,8 +146,8 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px;
-    row-gap: 30px;
+    padding: 20px;
+    width: 100%;
 }
 .portfolio__title {
     text-align: center;
@@ -138,16 +155,27 @@ section {
 }
 .portfolio__articles-container {
     display: grid;
-    grid-template-columns: repeat(2, minmax(200px, 280px));
-    grid-template-rows: repeat(2, minmax(0, 200px));
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    
+    /* Centrar la cuadrícula */
+    justify-content: center; /* Centra las columnas dentro del contenedor */
+    align-content: center; /* Centra las filas dentro del contenedor */
+
+    /* Asegurar que el contenedor ocupa todo el ancho disponible */
+    gap: 20px; /* Espacio entre los elementos */
+    padding: 20px; /* Espacio alrededor del contenedor */
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
 }
+
 .portfolio__article {
     background: #ecf0f1;
-    border-radius: 8px;
-    width: 100%;
-    height: 100%;
+    border-radius: 4px;
+    padding: 20px; /* Espacio alrededor del contenido del artículo */
+    aspect-ratio: 1 / 1; /* Asegura que los elementos sean cuadrados */
 }
+
 /* -- PORTFOLIO ENDS --*/
 
 
