@@ -143,8 +143,9 @@ section {
 
 /* -- PORTFOLIO -- */
 .portfolio {
-    background-color: #333;
-    color: #fff;
+    background: rgb(5,94,179);
+background: radial-gradient(circle, rgb(3, 71, 134) -35%, rgba(34,35,36,1) 38%);
+    color: var(--white);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -152,32 +153,71 @@ section {
     padding: 20px;
     width: 100%;
 }
+
 .portfolio__title {
     text-align: center;
-    margin: 0;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    margin: 30px 0 20px 0;
+    letter-spacing: 2.5px;
 }
+
 .portfolio__articles-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    
-    /* Centrar la cuadrícula */
-    justify-content: center; /* Centra las columnas dentro del contenedor */
-    align-content: center; /* Centra las filas dentro del contenedor */
-
-    /* Asegurar que el contenedor ocupa todo el ancho disponible */
-    gap: 20px; /* Espacio entre los elementos */
-    padding: 20px; /* Espacio alrededor del contenedor */
-    width: 100%; /* Ajusta el ancho al 100% del contenedor */
-    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    gap: 20px;
+    padding: 5px;
+    width: 100%;
+    margin: 20px 0;
 }
 
 .portfolio__article {
-    background: #ecf0f1;
-    border-radius: 4px;
-    padding: 20px; /* Espacio alrededor del contenido del artículo */
-    aspect-ratio: 1 / 1; /* Asegura que los elementos sean cuadrados */
+    background: var(--black);
+    color: var(--white);
+    border: .5px solid #ffffff56;
+    border-radius: 6px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    cursor: pointer;
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateX(-50px); /* Mueve hacia la izquierda por defecto */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+/* animations */
+/* Los artículos en la derecha se deslizan desde la derecha */
+.portfolio__article:nth-child(2n) {
+    transform: translateX(50px); /* Mueve hacia la derecha */
+}
+.portfolio__article.visible {
+    opacity: 1; /* Aparece completamente */
+    transform: translateX(0); /* Vuelve a su posición original */
+}
+
+.portfolio__img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 11;
+    background-color: #333;
+    border-radius: 6px;
+    box-shadow: 0px 0px 10px #333;
+}
+
+.portfolio__text-container h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--blue);
+}
+
+.portfolio__text-container p {
+    margin: 15px 0 5px 0;
+    font-size: .9rem;
+    letter-spacing: 1.5px;
+}
+
 
 /* -- PORTFOLIO ENDS --*/
 
@@ -281,16 +321,33 @@ section {
     }
 
     .portfolio {
-        flex-direction: row-reverse;
-        justify-content: space-evenly;
-        column-gap: 30px;
         min-height: 90vh;
-    }
-    .portfolio__title {
-        font-size: 2rem;
+        padding: 30px;
     }
     .portfolio__articles-container {
-        width: 35%; /* Ajusta el ancho al 100% del contenedor */
+        max-width: 1075px;
+        gap: 30px;
+    }
+    .portfolio__article {
+        flex-direction: row;
+        min-height: 200px;
+        column-gap: 35px;
+        padding: 20px;
+    }
+    .portfolio__img {
+        flex-shrink: 0;
+        width: 50%;        
+        height: auto;       
+    }
+    .portfolio__text-container {
+        width: 50%;
+    }
+    .portfolio__text-container h2 {
+        font-size: 1.6rem;
+    }
+    .portfolio__text-container p {
+        white-space: normal;
+        font-size: .9rem;
     }
 
     .about__members-container {
@@ -300,7 +357,7 @@ section {
         width: 100%;
     }
     .about__title {
-        font-size: 2rem;
+        font-size: clamp(2rem, 7vw, 3.5rem);
     }
     .about__info-container {
         min-width: 100px;
@@ -308,8 +365,35 @@ section {
     .about__members {
         flex-direction: row;
         min-height: 270px;
-        min-width: 300px;
-        max-width: 45%;
+        min-width: 290px;
+        max-width: 450px;
     }
 }
 
+
+
+
+
+/* Animación para los artículos de la izquierda */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animación para los artículos de la derecha */
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
