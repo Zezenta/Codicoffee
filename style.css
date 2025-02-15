@@ -152,32 +152,53 @@ section {
     padding: 20px;
     width: 100%;
 }
+
 .portfolio__title {
     text-align: center;
     margin: 0;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    margin: 15px 0px;
 }
+
 .portfolio__articles-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    
-    /* Centrar la cuadrícula */
-    justify-content: center; /* Centra las columnas dentro del contenedor */
-    align-content: center; /* Centra las filas dentro del contenedor */
-
-    /* Asegurar que el contenedor ocupa todo el ancho disponible */
-    gap: 20px; /* Espacio entre los elementos */
-    padding: 20px; /* Espacio alrededor del contenedor */
-    width: 100%; /* Ajusta el ancho al 100% del contenedor */
-    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    gap: 20px;
+    padding: 5px;
+    width: 100%;
 }
 
 .portfolio__article {
     background: #ecf0f1;
+    color: #000;
     border-radius: 4px;
-    padding: 20px; /* Espacio alrededor del contenido del artículo */
-    aspect-ratio: 1 / 1; /* Asegura que los elementos sean cuadrados */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
 }
+
+.portfolio__img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 11;
+    background-color: #333;
+    border-radius: 6px;
+}
+
+.portfolio__text-container h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.portfolio__text-container p {
+    margin: 15px 0 5px 0;
+    font-size: 1rem;
+}
+
 
 /* -- PORTFOLIO ENDS --*/
 
@@ -264,16 +285,29 @@ section {
     }
 
     .portfolio {
-        flex-direction: row-reverse;
-        justify-content: space-evenly;
-        column-gap: 30px;
-        min-height: 90vh;
-    }
-    .portfolio__title {
-        font-size: 2rem;
+        min-height: 80vh;
+        padding: 30px;
     }
     .portfolio__articles-container {
-        width: 35%; /* Ajusta el ancho al 100% del contenedor */
+        max-width: 1075px;
+        gap: 30px;
+    }
+    .portfolio__article {
+        flex-direction: row;
+        min-height: 200px;
+        column-gap: 15px;
+        padding: 20px;
+    }
+    .portfolio__img {
+        flex-shrink: 0;
+        width: 50%;        
+        height: auto;       
+    }
+    .portfolio__text-container {
+        width: 50%;
+    }
+    .portfolio__text-container p {
+        white-space: normal;
     }
 
     .about__members-container {
@@ -283,7 +317,7 @@ section {
         width: 100%;
     }
     .about__title {
-        font-size: 2rem;
+        font-size: clamp(2rem, 7vw, 3.5rem);
     }
     .about__info-container {
         min-width: 100px;
@@ -291,7 +325,7 @@ section {
     .about__members {
         flex-direction: row;
         min-height: 270px;
-        min-width: 300px;
+        min-width: 290px;
         max-width: 450px;
     }
 }
