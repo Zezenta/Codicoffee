@@ -98,7 +98,6 @@ section {
 #presentation__small__text{
     font-size: 20px;
 }
-/* Presentación ends*/
 
 
 /* Services */
@@ -120,9 +119,10 @@ section {
 .service__card {
     background-color: #333;
     color: white;
-    padding: 20px;
+    padding: 20px 10px;
     border-radius: 10px;
     width: 300px;
+    height: 300px;
     text-align: center;
 }
 .service__cards h3 {
@@ -239,11 +239,10 @@ background: radial-gradient(circle, rgb(3, 71, 134) -35%, rgba(34,35,36,1) 38%);
 }
 .about__members {
     background: #333;
-    padding: 25px 25px 0px 25px;
+    padding: 25px 5px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 400px;
+    width: 90%;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -289,6 +288,24 @@ background: radial-gradient(circle, rgb(3, 71, 134) -35%, rgba(34,35,36,1) 38%);
     .presentation__text {
         align-items: flex-start;
     }
+
+    .presentation__icon-container{
+        display: flex;
+        justify-content: space-between; /* Espaciado entre ellos */
+        width: 50%;
+    }
+    #presentation__cellphoneSVG {    
+        flex: 1; /* Se distribuirán equitativamente */
+        max-width: 40%; /* Para que no superen juntos el 100% */
+        height: auto;
+    }
+    
+    #presentation__laptopSVG {
+        flex: 1; /* Se distribuirán equitativamente */
+        max-width: 60%; /* Para que no superen juntos el 100% */
+        height: auto;
+    }
+
     
     .services {
         min-height: 60vh;
