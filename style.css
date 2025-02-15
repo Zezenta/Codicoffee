@@ -98,10 +98,18 @@ section {
 }
 .presentation__icon-container {
     margin-top: 20px;
+    max-width: 100%; /* for it to not overflow*/
+    overflow: hidden;
 }
 #dynamic-word {
     display: inline-block;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    position: relative;
+    white-space: nowrap;
+}
+
+#current-image, #new-image, #current-laptop-image, #new-laptop-image {
+    transition: transform 0.5s ease-in-out, opacity 0.5s;
     position: relative;
     white-space: nowrap;
 }
@@ -151,7 +159,7 @@ section {
 /* -- PORTFOLIO -- */
 .portfolio {
     background: rgb(5,94,179);
-background: radial-gradient(circle, rgb(3, 71, 134) -35%, rgba(34,35,36,1) 38%);
+    background: radial-gradient(circle, rgb(3, 71, 134) -35%, rgba(34,35,36,1) 38%);
     color: var(--white);
     display: flex;
     flex-direction: column;
@@ -176,6 +184,8 @@ background: radial-gradient(circle, rgb(3, 71, 134) -35%, rgba(34,35,36,1) 38%);
     padding: 5px;
     width: 100%;
     margin: 20px 0;
+    max-width: 100%; /* for it to not overflow*/
+    overflow: hidden;
 }
 
 .portfolio__article {
