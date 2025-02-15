@@ -1,9 +1,27 @@
+function adjustPresentationText() {
+    const presentationText = document.getElementById('presentationtext');
+    if (window.innerWidth < 768) {
+        presentationText.innerHTML = 'Hacemos un<br>sitio web<br>para tu<br><span id="dynamic-word">Negocio</span>';
+    } else {
+        presentationText.innerHTML = 'Hacemos un sitio web<br>para tu <span id="dynamic-word">Negocio</span>';
+    }
+    // Actualiza la referencia a wordElement
+    wordElement = document.getElementById("dynamic-word");
+}
+// Ajusta el texto al cargar la página
+adjustPresentationText();
+// Ajusta el texto al redimensionar la ventana
+window.addEventListener('resize', adjustPresentationText);
+
 document.addEventListener("DOMContentLoaded", () => {
     const words = ["Negocio", "Resort", "Hotel", "Profesión", "Restaurante", "Bar"];
-    const wordElement = document.getElementById("dynamic-word");
+    let wordElement = document.getElementById("dynamic-word");
     let index = 0;
 
     function changeWord() {
+        // Actualiza la referencia a wordElement
+        wordElement = document.getElementById("dynamic-word");
+
         // Primera animación: la palabra actual se desliza hacia la izquierda
         wordElement.style.transition = "transform 0.5s ease-in-out, opacity 0.5s";
         wordElement.style.transform = "translateX(-50%)";

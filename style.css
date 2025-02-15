@@ -67,7 +67,7 @@ section {
 
 /* Presentación */
 .presentation {
-    padding-top: 100px;
+    padding: 100px 0px 50px; /* 100px up, 0px to the sides, 50px down */	
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -83,20 +83,21 @@ section {
     justify-content: center;
     align-items: center;
     row-gap: 20px;
+    max-width: 100%; /* for it to not overflow*/
+    overflow: hidden;
 }
 .presentation__text h2 {
     font-size: 3rem;
     margin: 0;
+    width: 100%;
 }
 .presentation__text p {
-    font-size: 16px;
     max-width: 400px;
+    font-size: 20px;
+    padding: 0px 8px; /*to make it more column like*/
 }
 .presentation__icon-container {
     margin-top: 20px;
-}
-#presentation__small__text{
-    font-size: 20px;
 }
 #dynamic-word {
     display: inline-block;
