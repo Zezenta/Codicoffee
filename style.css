@@ -143,8 +143,9 @@ section {
 
 /* -- PORTFOLIO -- */
 .portfolio {
-    background-color: #333;
-    color: #fff;
+    background: rgb(5,94,179);
+background: radial-gradient(circle, rgb(3, 71, 134) -35%, rgba(34,35,36,1) 38%);
+    color: var(--white);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -155,9 +156,9 @@ section {
 
 .portfolio__title {
     text-align: center;
-    margin: 0;
     font-size: clamp(2rem, 5vw, 2.5rem);
-    margin: 15px 0px;
+    margin: 30px 0 20px 0;
+    letter-spacing: 2.5px;
 }
 
 .portfolio__articles-container {
@@ -167,18 +168,21 @@ section {
     gap: 20px;
     padding: 5px;
     width: 100%;
+    margin: 20px 0;
 }
 
 .portfolio__article {
-    background: #ecf0f1;
-    color: #000;
-    border-radius: 4px;
+    background: var(--black);
+    color: var(--white);
+    border: .5px solid #ffffff56;
+    border-radius: 6px;
     padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     row-gap: 20px;
+    cursor: pointer;
 }
 
 .portfolio__img {
@@ -187,16 +191,19 @@ section {
     aspect-ratio: 16 / 11;
     background-color: #333;
     border-radius: 6px;
+    box-shadow: 0px 0px 10px #333;
 }
 
 .portfolio__text-container h2 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--blue);
 }
 
 .portfolio__text-container p {
     margin: 15px 0 5px 0;
-    font-size: 1rem;
+    font-size: .9rem;
+    letter-spacing: 1.5px;
 }
 
 
@@ -285,7 +292,7 @@ section {
     }
 
     .portfolio {
-        min-height: 80vh;
+        min-height: 90vh;
         padding: 30px;
     }
     .portfolio__articles-container {
@@ -306,8 +313,12 @@ section {
     .portfolio__text-container {
         width: 50%;
     }
+    .portfolio__text-container h2 {
+        font-size: 1.6rem;
+    }
     .portfolio__text-container p {
         white-space: normal;
+        font-size: .9rem;
     }
 
     .about__members-container {
