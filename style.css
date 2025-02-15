@@ -98,6 +98,12 @@ section {
 #presentation__small__text{
     font-size: 20px;
 }
+#dynamic-word {
+    display: inline-block;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    position: relative;
+    white-space: nowrap;
+}
 
 
 /* Services */
