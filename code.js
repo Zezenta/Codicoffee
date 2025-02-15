@@ -5,129 +5,135 @@ function adjustPresentationText() {
     } else {
         presentationText.innerHTML = 'Hacemos un sitio web<br>para tu <span id="dynamic-word">Negocio</span>';
     }
-    // Actualiza la referencia a wordElement
-    wordElement = document.getElementById("dynamic-word");
+    wordElement = document.getElementById("dynamic-word"); //update reference
 }
-// Ajusta el texto al cargar la página
-adjustPresentationText();
-// Ajusta el texto al redimensionar la ventana
-window.addEventListener('resize', adjustPresentationText);
+
+adjustPresentationText(); //adjust text on load
+
+window.addEventListener('resize', adjustPresentationText); //adjust text on resize
 
 document.addEventListener("DOMContentLoaded", () => {
-    const words = ["Negocio", "Resort", "Hotel", "Profesión", "Restaurante", "Bar"];
+    const words = ["Restaurante", "Bar", "Hotel", "Profesión"];
     let wordElement = document.getElementById("dynamic-word");
     let index = 0;
 
     function changeWord() {
-        // Actualiza la referencia a wordElement
+        //update reference
         wordElement = document.getElementById("dynamic-word");
 
-        // Primera animación: la palabra actual se desliza hacia la izquierda
-        wordElement.style.transition = "transform 0.5s ease-in-out, opacity 0.5s";
-        wordElement.style.transform = "translateX(-50%)";
-        wordElement.style.opacity = "0";
+        wordElement.style.transition = "transform 0.5s ease-in-out, opacity 0.5s"; //transition
+        wordElement.style.transform = "translateX(-50%)"; //move to the left
+        wordElement.style.opacity = "0"; //disappear word
 
         setTimeout(() => {
-            // Cambia la palabra y la coloca fuera de pantalla a la derecha
+            //change word and reposition
             index = (index + 1) % words.length;
             wordElement.textContent = words[index];
-            wordElement.style.transition = "none"; // Quita transición para reposicionar instantáneamente
+            wordElement.style.transition = "none"; //deletes transition to reposition instantly
             wordElement.style.transform = "translateX(50%)";
 
             setTimeout(() => {
-                // Segunda animación: la nueva palabra entra desde la derecha
+                //second transition to reappear
                 wordElement.style.transition = "transform 0.5s ease-in-out, opacity 0.5s";
                 wordElement.style.transform = "translateX(0)";
                 wordElement.style.opacity = "1";
-            }, 50); // Pequeña pausa para que la transición se vea fluida
-        }, 500); // Espera a que la primera animación termine
+            }, 50); //small delay to ensure the repositioning
+        }, 500); //waits for the word to disappear
     }
 
-    setInterval(changeWord, 3000); // Cambia la palabra cada 3 segundos
+    setInterval(changeWord, 3000); //change word every 3 seconds
 });
 
-
+//PORTFOLIO CARDS ANIMATION
 document.addEventListener("DOMContentLoaded", () => {
-    const articles = document.querySelectorAll(".portfolio__article");
+    const articles = document.querySelectorAll(".portfolio__article"); //select all articles
 
     const showOnScroll = () => {
         articles.forEach(article => {
-            const rect = article.getBoundingClientRect();
-            if (rect.top < window.innerHeight * 0.85) {
-                article.classList.add("visible");
+            const rect = article.getBoundingClientRect(); //get position of article
+            if (rect.top < window.innerHeight * 0.85) { //if article is visible
+                article.classList.add("visible"); //add visible class
             }
         });
     };
 
-    window.addEventListener("scroll", showOnScroll);
-    showOnScroll(); // Ejecutar al cargar para mostrar los que ya están en pantalla
+    window.addEventListener("scroll", showOnScroll); //execute on scroll
+    showOnScroll(); //execute on load
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => { //LAPTOP & CELLPHONE SLIDESHOW
+    //IMAGE SOURCES
     const cellphoneImages = [
         "https://zezenta.shop/placeholders/SHARE/phoneone.png",
         "https://zezenta.shop/placeholders/SHARE/phonetwo.png",
         "https://zezenta.shop/placeholders/SHARE/phonethree.png",
         "https://zezenta.shop/placeholders/SHARE/phonefour.png"
-        // Añade más URLs de imágenes aquí
     ];
     const laptopImages = [
         "https://zezenta.shop/placeholders/SHARE/laptopone.png",
         "https://zezenta.shop/placeholders/SHARE/laptoptwo.png",
         "https://zezenta.shop/placeholders/SHARE/laptopthree.png",
         "https://zezenta.shop/placeholders/SHARE/laptopfour.png"
-        // Añade más URLs de imágenes aquí
     ];
+
+    //FOR CYCLING
     let currentCellphoneIndex = 0;
     let currentLaptopIndex = 0;
+
     const currentCellphoneImage = document.getElementById("current-cellphone-image");
     const currentLaptopImage = document.getElementById("current-laptop-image");
 
+    //PRE LOAD THE IMAGES IN MEMORY
+    const cellphoneCache = cellphoneImages.map((src) => {
+        const img = new Image();
+        img.src = src;
+        return img;
+    });
+    const laptopCache = laptopImages.map((src) => {
+        const img = new Image();
+        img.src = src;
+        return img;
+    });
+
     function changeCellphoneImage() {
-        // Configura la nueva imagen
-        currentCellphoneImage.style.transition = "transform 0.5s ease-in-out, opacity 0.5s";
-        currentCellphoneImage.style.transform = "translateX(-50%)";
-        currentCellphoneImage.style.opacity = "0";
+        currentCellphoneImage.style.transition = "transform 0.5s ease-in-out, opacity 0.5s"; //transition effect
+        currentCellphoneImage.style.transform = "translateX(-50%)"; //move to the left
+        currentCellphoneImage.style.opacity = "0"; //disappear image
 
         setTimeout(() => {
-            currentCellphoneIndex = (currentCellphoneIndex + 1) % cellphoneImages.length;
-            // Cambia la imagen actual por la nueva imagen
-            currentCellphoneImage.href.baseVal = cellphoneImages[currentCellphoneIndex];
-            currentCellphoneImage.style.transition = "none"; // Quita transición para reposicionar instantáneamente
-            currentCellphoneImage.style.transform = "translateX(50%)";
+            currentCellphoneIndex = (currentCellphoneIndex + 1) % cellphoneImages.length; //INDEX CYCLING
+            currentCellphoneImage.href.baseVal = cellphoneCache[currentCellphoneIndex].src; //USE PRE LOADED VERSIONS
+            currentCellphoneImage.style.transition = "none"; //remove transition to reposition instantly
+            currentCellphoneImage.style.transform = "translateX(50%)"; //move instantly to the right
 
             setTimeout(() => {
-                // Segunda animación: la nueva palabra entra desde la derecha
-                currentCellphoneImage.style.transition = "transform 0.5s ease-in-out, opacity 0.5s";
-                currentCellphoneImage.style.transform = "translateX(0)";
-                currentCellphoneImage.style.opacity = "1";
-            }, 50); // Pequeña pausa para que la transición se vea fluida
-        }, 500); // Duración de la animación
+                currentCellphoneImage.style.transition = "transform 0.5s ease-in-out, opacity 0.5s"; //transition effect
+                currentCellphoneImage.style.transform = "translateX(0)"; //move to the center smoothly
+                currentCellphoneImage.style.opacity = "1"; //appear image
+            }, 50);
+        }, 500);
     }
 
     function changeLaptopImage() {
-        // Configura la nueva imagen
         currentLaptopImage.style.transition = "transform 0.5s ease-in-out, opacity 0.5s";
         currentLaptopImage.style.transform = "translateX(-50%)";
         currentLaptopImage.style.opacity = "0";
 
         setTimeout(() => {
             currentLaptopIndex = (currentLaptopIndex + 1) % laptopImages.length;
-            // Cambia la imagen actual por la nueva imagen
-            currentLaptopImage.href.baseVal = laptopImages[currentLaptopIndex];
-            currentLaptopImage.style.transition = "none"; // Quita transición para reposicionar instantáneamente
+            currentLaptopImage.href.baseVal = laptopCache[currentLaptopIndex].src;
+            currentLaptopImage.style.transition = "none";
             currentLaptopImage.style.transform = "translateX(50%)";
 
             setTimeout(() => {
-                // Segunda animación: la nueva palabra entra desde la derecha
                 currentLaptopImage.style.transition = "transform 0.5s ease-in-out, opacity 0.5s";
                 currentLaptopImage.style.transform = "translateX(0)";
                 currentLaptopImage.style.opacity = "1";
-            }, 50); // Pequeña pausa para que la transición se vea fluida
-        }, 500); // Duración de la animación
+            }, 50);
+        }, 500);
     }
 
-    setInterval(changeCellphoneImage, 3000); // Cambia la imagen del celular cada 3 segundos
-    setInterval(changeLaptopImage, 3000); // Cambia la imagen de la laptop cada 3 segundos
+    setInterval(changeCellphoneImage, 3000); //cycle every 3 seconds
+    setInterval(changeLaptopImage, 3000);
 });
