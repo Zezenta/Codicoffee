@@ -1,3 +1,41 @@
+//#NAVBAR CODE
+//NAVBAR LINKS ILLUMINATION
+const sections = document.querySelectorAll(".section");
+const navLinks = document.querySelectorAll(".nav-link");
+const observer = new IntersectionObserver(entries => { //create observer
+    entries.forEach(entry => {
+        const link = document.querySelector(`.nav-link[data-section="${entry.target.id}"]`); //select the link with the same data-section attribute
+        if (entry.isIntersecting) { //if the section is visible
+            navLinks.forEach(link => link.classList.remove("active")); //remove active class from all links
+            link.classList.add("active"); //add active class to the current link
+        }
+    });
+}, {
+    root: null, //Use the viewport
+    threshold: 0.6 //60% of the section must be visible
+});
+
+//SMOOTH AUTO SCROLL
+sections.forEach(section => observer.observe(section));
+navLinks.forEach(link => { //add event listener to each link
+    link.addEventListener("click", function(event) { //scroll to section on click
+        event.preventDefault(); //prevent default behavior
+
+        const sectionId = this.getAttribute("data-section"); //get the section id
+        const section = document.getElementById(sectionId); //select the section
+
+        if (section) { //if the section exists
+            section.scrollIntoView({ //scroll to the section
+                behavior: "smooth"  //smooth scroll
+            });
+        }
+    });
+});
+
+
+
+//#PRESENTATION CODE
+//CHANGE PRESENTATION TEXT DEPENDING ON WHETHER THE SCREEN IS SMALL OR LARGE
 function adjustPresentationText() {
     const presentationText = document.getElementById('presentationtext');
     if (window.innerWidth < 768) {
@@ -7,11 +45,10 @@ function adjustPresentationText() {
     }
     wordElement = document.getElementById("dynamic-word"); //update reference
 }
-
 adjustPresentationText(); //adjust text on load
-
 window.addEventListener('resize', adjustPresentationText); //adjust text on resize
 
+//CHANGING WORDS DYNAMICALLY
 document.addEventListener("DOMContentLoaded", () => {
     const words = ["Restaurante", "Bar", "Hotel", "Profesión"];
     let wordElement = document.getElementById("dynamic-word");
@@ -44,25 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(changeWord, 3000); //change word every 3 seconds
 });
 
-//PORTFOLIO CARDS ANIMATION
-document.addEventListener("DOMContentLoaded", () => {
-    const articles = document.querySelectorAll(".portfolio__article"); //select all articles
-
-    const showOnScroll = () => {
-        articles.forEach(article => {
-            const rect = article.getBoundingClientRect(); //get position of article
-            if (rect.top < window.innerHeight * 0.85) { //if article is visible
-                article.classList.add("visible"); //add visible class
-            }
-        });
-    };
-
-    window.addEventListener("scroll", showOnScroll); //execute on scroll
-    showOnScroll(); //execute on load
-});
-
-
-document.addEventListener("DOMContentLoaded", () => { //LAPTOP & CELLPHONE SLIDESHOW
+//LAPTOP & CELLPHONE SLIDESHOW
+document.addEventListener("DOMContentLoaded", () => { //execute when the page is loaded
     //IMAGE SOURCES
     const cellphoneImages = [
         "https://zezenta.shop/placeholders/SHARE/phoneone.png",
@@ -138,35 +158,20 @@ document.addEventListener("DOMContentLoaded", () => { //LAPTOP & CELLPHONE SLIDE
     setInterval(changeLaptopImage, 3000);
 });
 
-const sections = document.querySelectorAll(".section");
-const navLinks = document.querySelectorAll(".nav-link");
+//#PORTFOLIO CODE
+//PORTFOLIO CARDS ANIMATION
+document.addEventListener("DOMContentLoaded", () => {
+    const articles = document.querySelectorAll(".portfolio__article"); //select all articles
 
-const observer = new IntersectionObserver(entries => { //create observer
-    entries.forEach(entry => {
-        const link = document.querySelector(`.nav-link[data-section="${entry.target.id}"]`); //select the link with the same data-section attribute
-        if (entry.isIntersecting) { //if the section is visible
-            navLinks.forEach(link => link.classList.remove("active")); //remove active class from all links
-            link.classList.add("active"); //add active class to the current link
-        }
-    });
-}, {
-    root: null, //Use the viewport
-    threshold: 0.6 //60% of the section must be visible
-});
+    const showOnScroll = () => {
+        articles.forEach(article => {
+            const rect = article.getBoundingClientRect(); //get position of article
+            if (rect.top < window.innerHeight * 0.85) { //if article is visible
+                article.classList.add("visible"); //add visible class
+            }
+        });
+    };
 
-sections.forEach(section => observer.observe(section));
-
-navLinks.forEach(link => { //add event listener to each link
-    link.addEventListener("click", function(event) { //scroll to section on click
-        event.preventDefault(); //prevent default behavior
-
-        const sectionId = this.getAttribute("data-section"); //get the section id
-        const section = document.getElementById(sectionId); //select the section
-
-        if (section) { //if the section exists
-            section.scrollIntoView({ //scroll to the section
-                behavior: "smooth"  //smooth scroll
-            });
-        }
-    });
+    window.addEventListener("scroll", showOnScroll); //execute on scroll
+    showOnScroll(); //execute on load
 });
