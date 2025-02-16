@@ -31,8 +31,8 @@ section {
 .header{
     position: fixed;
     width: 100%;
-    top: -10px; /* Ajusta este valor para que la navbar suba un poco */
-    z-index: 1000; /* Asegura que la navbar esté por encima de otros elementos */
+    top: -10px; /* For it to go up a little */
+    z-index: 1000; /* Makes sure it's on top of everything */
     backdrop-filter: blur(5px);
 }
 
@@ -213,18 +213,18 @@ section {
     align-items: center;
     row-gap: 20px;
     cursor: pointer;
-    opacity: 0; /* Inicialmente invisible */
-    transform: translateX(-50px); /* Mueve hacia la izquierda por defecto */
+    opacity: 0; /* Initially invisible */
+    transform: translateX(-50px); /* Moves to the left */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 /* animations */
-/* Los artículos en la derecha se deslizan desde la derecha */
+/* ARTICLES ON THE RIGHT MOVE TO THE LEFT */
 .portfolio__article:nth-child(2n) {
-    transform: translateX(50px); /* Mueve hacia la derecha */
+    transform: translateX(50px); /* Moves to the right */
 }
 .portfolio__article.visible {
-    opacity: 1; /* Aparece completamente */
-    transform: translateX(0); /* Vuelve a su posición original */
+    opacity: 1; /* Appears */
+    transform: translateX(0); /* Comes back to its original position */
 }
 
 .portfolio__img {
@@ -321,18 +321,18 @@ section {
 
     .presentation__icon-container{
         display: flex;
-        justify-content: space-between; /* Espaciado entre ellos */
+        justify-content: space-between; /* Space between the two elements */
         width: 50%;
     }
     #presentation__cellphoneSVG {    
-        flex: 1; /* Se distribuirán equitativamente */
-        max-width: 40%; /* Para que no superen juntos el 100% */
+        flex: 1; /* Distribute the space equally */
+        max-width: 40%; /* So they don't exceed 100% together */
         height: auto;
     }
     
     #presentation__laptopSVG {
-        flex: 1; /* Se distribuirán equitativamente */
-        max-width: 60%; /* Para que no superen juntos el 100% */
+        flex: 1;
+        max-width: 60%;
         height: auto;
     }
 
@@ -404,7 +404,7 @@ section {
 
 
 
-/* Animación para los artículos de la izquierda */
+/* ANIMATION FOR ARTICLES ON THE LEFT */
 @keyframes slideInFromLeft {
     0% {
         transform: translateX(-100%);
@@ -416,7 +416,7 @@ section {
     }
 }
 
-/* Animación para los artículos de la derecha */
+/* ANIMATION FOR ARTICLES ON THE RIGHT */
 @keyframes slideInFromRight {
     0% {
         transform: translateX(100%);
