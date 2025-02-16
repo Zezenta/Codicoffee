@@ -137,3 +137,21 @@ document.addEventListener("DOMContentLoaded", () => { //LAPTOP & CELLPHONE SLIDE
     setInterval(changeCellphoneImage, 3000); //cycle every 3 seconds
     setInterval(changeLaptopImage, 3000);
 });
+
+const sections = document.querySelectorAll(".section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+const observer = new IntersectionObserver(entries => { //create observer
+    entries.forEach(entry => {
+        const link = document.querySelector(`.nav-link[data-section="${entry.target.id}"]`); //select the link with the same data-section attribute
+        if (entry.isIntersecting) { //if the section is visible
+            navLinks.forEach(link => link.classList.remove("active")); //remove active class from all links
+            link.classList.add("active"); //add active class to the current link
+        }
+    });
+}, {
+    root: null, //Use the viewport
+    threshold: 0.6 //60% of the section must be visible
+});
+
+sections.forEach(section => observer.observe(section));

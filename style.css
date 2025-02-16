@@ -56,12 +56,25 @@ section {
     padding-inline-start: 20px;
 }
 .header__links-container a {
-    color: white;
+    color: #FFFFFF99;
+    font-weight: bold;
     text-decoration: none;
 }
 .header__links-container a:hover {
-    text-decoration: underline;
+    color: #FFFFFF;
 }
+
+.nav-link {
+    color: #FFFFFF99;
+    text-decoration: none;
+    padding: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transition */
+}
+
+.nav-link.active {
+    color: #FFFFFF;
+}
+
 /* -- header ends --*/
 
 
