@@ -15,7 +15,7 @@ html {
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Inter";
     background-color: rgb(166, 166, 166);
 }
 main {
@@ -34,6 +34,7 @@ section {
     top: -10px; /* For it to go up a little */
     z-index: 1000; /* Makes sure it's on top of everything */
     backdrop-filter: blur(5px);
+    background-color: #4E216199;
 }
 
 .header__navbar {
@@ -103,6 +104,7 @@ section {
     font-size: 3rem;
     margin: 0;
     width: 100%;
+    font-weight: bold; /* it was previously already bold because of browser default, but just in case */
 }
 .presentation__text p {
     max-width: 400px;
