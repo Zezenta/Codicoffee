@@ -14,25 +14,7 @@ const observer = new IntersectionObserver(entries => { //create observer
     root: null, //Use the viewport
     threshold: 0.6 //60% of the section must be visible
 });
-
-//SMOOTH AUTO SCROLL
 sections.forEach(section => observer.observe(section));
-navLinks.forEach(link => { //add event listener to each link
-    link.addEventListener("click", function(event) { //scroll to section on click
-        event.preventDefault(); //prevent default behavior
-
-        const sectionId = this.getAttribute("data-section"); //get the section id
-        const section = document.getElementById(sectionId); //select the section
-
-        if (section) { //if the section exists
-            section.scrollIntoView({ //scroll to the section
-                behavior: "smooth"  //smooth scroll
-            });
-        }
-    });
-});
-
-
 
 //#PRESENTATION CODE
 //CHANGE PRESENTATION TEXT DEPENDING ON WHETHER THE SCREEN IS SMALL OR LARGE
