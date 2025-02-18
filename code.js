@@ -143,17 +143,25 @@ document.addEventListener("DOMContentLoaded", () => { //execute when the page is
 //#PORTFOLIO CODE
 //PORTFOLIO CARDS ANIMATION
 document.addEventListener("DOMContentLoaded", () => {
-    const articles = document.querySelectorAll(".portfolio__article"); //select all articles
+    const articles = document.querySelectorAll(".portfolio__article");
+    let animatedCount = 0; // delay counter
 
     const showOnScroll = () => {
+        let newDelay = 0; 
+        let visibleArticles = 0; 
+
         articles.forEach(article => {
-            const rect = article.getBoundingClientRect(); //get position of article
-            if (rect.top < window.innerHeight * 0.85) { //if article is visible
-                article.classList.add("visible"); //add visible class
+            const rect = article.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.85 && !article.classList.contains("visible")) {
+                setTimeout(() => {
+                    article.classList.add("visible");
+                }, newDelay);
+                newDelay += 170; // Delay 
+                visibleArticles++; // add element
             }
         });
     };
 
-    window.addEventListener("scroll", showOnScroll); //execute on scroll
-    showOnScroll(); //execute on load
+    window.addEventListener("scroll", showOnScroll);
+    showOnScroll();
 });

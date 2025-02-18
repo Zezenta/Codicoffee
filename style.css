@@ -19,6 +19,19 @@ body {
     font-family: "Inter";
     background-color: rgb(166, 166, 166);
 }
+body::-webkit-scrollbar {
+    width: 6px; 
+}
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+body::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+body::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
 main {
     width: 100%;
     background: white;
@@ -183,11 +196,12 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
     justify-content: center;
     padding: 20px;
     width: 100%;
+    row-gap: 25px;
 }
 .portfolio__title {
     text-align: center;
     font-size: clamp(2rem, 5vw, 2.5rem);
-    margin: 30px 0 15px 0;
+    margin: 30px 0 0 0;
     letter-spacing: 2.5px;
 }
 .portfolio__articles-container {
@@ -197,18 +211,18 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
     gap: 12px;
     padding: 5px;
     width: 100%;
-    margin: 20px 0;
     max-width: 100%; /* for it to not overflow*/
     overflow: hidden;
 }
 .portfolio__article {
-    background: var(--white);
-    border-radius: 6px;
+    background: transparent;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     cursor: pointer;
+    box-shadow: 0px 0px 9px #2e2e2e;
+
     opacity: 0; /* Initially invisible */
     transform: translateX(-50px); /* Moves to the left */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -222,16 +236,29 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
     opacity: 1; /* Appears */
     transform: translateX(0); /* Comes back to its original position */
 }
+.portfolio__article:nth-child(1).visible {
+    transition-delay: 0s;
+}
+.portfolio__article:nth-child(2).visible {
+    transition-delay: 0.15s;
+}
+.portfolio__article:nth-child(3).visible {
+    transition-delay: 0.35s;
+}
+.portfolio__article:nth-child(4).visible {
+    transition-delay: 0.55s;
+}
 
 .portfolio__img {
     width: 100%;
     height: auto;
     object-fit: contain;
     border-radius: 6px 6px 0px 0px;
-    box-shadow: 0px 0px 7px #2e2e2e;
 }
 .portfolio__text-container {
     padding: 15px;
+    background-color: var(--white);
+    border-radius: 0px 0px 6px 6px;
 }
 .portfolio__text-container h2 {
     margin: 0;
@@ -239,12 +266,23 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
     color: var(--purple);
     word-break: break-all;
 }
-
 .portfolio__text-container p {
     margin: 15px 0 5px 0;
     font-size: .75rem;
     letter-spacing: 1.5px;
     color: #000;
+}
+.portfolio__btn {
+    min-width: 130px;
+    min-height: 50px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background-color: var(--purple);
+    color: var(--white);
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 700;
 }
 
 
@@ -376,33 +414,5 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
         min-height: 270px;
         min-width: 290px;
         max-width: 450px;
-    }
-}
-
-
-
-
-
-/* ANIMATION FOR ARTICLES ON THE LEFT */
-@keyframes slideInFromLeft {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-/* ANIMATION FOR ARTICLES ON THE RIGHT */
-@keyframes slideInFromRight {
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
     }
 }
