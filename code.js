@@ -1,4 +1,30 @@
 //#NAVBAR CODE
+//BURGER MENU
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle"); //Select the menu toggle button
+    const menu = document.querySelector(".header__links-container"); //Select the menu container
+
+    //Open/close menu when clicking the button
+    menuToggle.addEventListener("click", function (event) {
+        event.stopPropagation(); //Avoids the event from propagating to the document (closing the menu)
+        menu.classList.toggle("active"); //Toggle the active class
+    });
+
+    //Close the menu when clicking a link
+    document.querySelectorAll(".nav-link").forEach(link => {
+        link.addEventListener("click", () => {
+            menu.classList.remove("active"); //Remove the active class
+        });
+    });
+
+    //Close the menu when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!menu.contains(event.target) && !menuToggle.contains(event.target)) { //If the click is outside the menu and the button
+            menu.classList.remove("active"); //Remove the active class from the menu
+        }
+    });
+});
+
 //NAVBAR LINKS ILLUMINATION
 const sections = document.querySelectorAll(".section");
 const navLinks = document.querySelectorAll(".nav-link");
@@ -139,6 +165,7 @@ document.addEventListener("DOMContentLoaded", () => { //execute when the page is
     setInterval(changeCellphoneImage, 3000); //cycle every 3 seconds
     setInterval(changeLaptopImage, 3000);
 });
+
 
 //#PORTFOLIO CODE
 //PORTFOLIO CARDS ANIMATION

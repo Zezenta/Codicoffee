@@ -41,7 +41,7 @@ section {
     padding: 50px 20px;
 }
 
-/* -- header --*/
+/* -- HEADER --*/
 .header{
     position: fixed;
     width: 100%;
@@ -66,9 +66,18 @@ section {
 }
 .header__links-container {
     list-style: none;
+    position: fixed;
+    top: 0;
+    right: -100%; /* Outside the window */
+    height: 100vh; /* Takes the whole height */
+    width: 250px; /* Width of the menu */
+    background-color: rgba(78, 33, 97, 0.9); /* Background color */
     display: flex;
-    gap: 15px;
-    padding-inline-start: 20px;
+    flex-direction: column; /* Stack the elements */
+    gap: 20px; /* Space between the elements */
+    padding-top: 50px; /* Space from the top */
+    transition: right 0.3s ease-in-out; /* Transition */
+    padding-inline-start: 20px; /* Padding for the text */
 }
 .header__links-container a {
     color: #FFFFFF99;
@@ -90,10 +99,22 @@ section {
     color: #FFFFFF;
 }
 
-/* -- header ends --*/
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #FFFFFF99;
+    cursor: pointer;
+}
+
+/* When the menu is active */
+.header__links-container.active {
+    right: 0; /* Comes into the screen */
+}
+/* -- HEADER ENDS --*/
 
 
-/* Presentación */
+/* PRESENTATION */
 .presentation {
     padding: 100px 0px 50px; /* 100px up, 0px to the sides, 50px down */	
     display: flex;
@@ -346,6 +367,21 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
 
 
 @media (min-width: 768px) {
+    /* HEADER */
+    .menu-toggle {
+        display: none;
+    }
+    .header__links-container {
+        position: static;
+        height: auto;
+        width: auto;
+        flex-direction: row;
+        background: none;
+        padding-top: 0; /* Correct mobile padding */
+    }
+    /* HEADER ENDS */
+
+    /* PRESENTATION */
     .presentation {
         height: 80vh;
         flex-direction: row;
@@ -355,7 +391,6 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
     .presentation__text {
         align-items: flex-start;
     }
-
     .presentation__icon-container{
         display: flex;
         justify-content: space-between; /* Space between the two elements */
@@ -371,7 +406,9 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
         max-width: 60%;
         height: auto;
     }
+    /* PRESENTATION ENDS */
 
+    /* SERVICES */
     .services {
         min-height: 60vh;
         display: flex;
@@ -384,7 +421,13 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
         justify-content: center;
         width: 100%;
     }
+    /* SERVICES ENDS */
 
+    /* PORTFOLIO */
+    .portfolio {
+        min-height: 90vh;
+        padding: 30px;
+    }
     .portfolio__articles-container {
         max-width: 850px;
         gap: 25px;
@@ -396,7 +439,9 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
         white-space: normal;
         font-size: .9rem;
     }
+    /* PORTFOLIO ENDS */
 
+    /* ABOUT */
     .about__members-container {
         flex-direction: row;
         justify-content: center;
@@ -415,4 +460,5 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
         min-width: 290px;
         max-width: 450px;
     }
+    /* ABOUT ENDS */
 }
