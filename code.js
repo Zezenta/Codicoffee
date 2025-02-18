@@ -171,11 +171,9 @@ document.addEventListener("DOMContentLoaded", () => { //execute when the page is
 //PORTFOLIO CARDS ANIMATION
 document.addEventListener("DOMContentLoaded", () => {
     const articles = document.querySelectorAll(".portfolio__article");
-    let animatedCount = 0; // delay counter
 
     const showOnScroll = () => {
         let newDelay = 0; 
-        let visibleArticles = 0; 
 
         articles.forEach(article => {
             const rect = article.getBoundingClientRect();
@@ -183,12 +181,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(() => {
                     article.classList.add("visible");
                 }, newDelay);
-                newDelay += 170; // Delay 
-                visibleArticles++; // add element
+                newDelay += 170; // Increase the delay for each article
             }
         });
     };
 
-    window.addEventListener("scroll", showOnScroll);
-    showOnScroll();
+    // We use debounce to improve the performance
+    const debounce = (func, wait) => {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    };
+
+    window.addEventListener("scroll", debounce(showOnScroll, 10));
+    showOnScroll(); // executes when the page is loaded
 });

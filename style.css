@@ -248,6 +248,9 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
     transform: translateX(-50px); /* Moves to the left */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+.portfolio__article.visible:hover {
+    transform: scale(1.03);
+}
 /* animations */
 /* ARTICLES ON THE RIGHT MOVE TO THE LEFT */
 .portfolio__article:nth-child(2n) {
@@ -257,19 +260,6 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
     opacity: 1; /* Appears */
     transform: translateX(0); /* Comes back to its original position */
 }
-.portfolio__article:nth-child(1).visible {
-    transition-delay: 0s;
-}
-.portfolio__article:nth-child(2).visible {
-    transition-delay: 0.15s;
-}
-.portfolio__article:nth-child(3).visible {
-    transition-delay: 0.35s;
-}
-.portfolio__article:nth-child(4).visible {
-    transition-delay: 0.55s;
-}
-
 .portfolio__img {
     width: 100%;
     height: auto;
