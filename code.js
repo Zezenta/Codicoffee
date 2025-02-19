@@ -40,24 +40,7 @@ const observer = new IntersectionObserver(entries => { //create observer
     root: null, //Use the viewport
     threshold: 0.6 //60% of the section must be visible
 });
-
-//SMOOTH AUTO SCROLL
 sections.forEach(section => observer.observe(section));
-navLinks.forEach(link => { //add event listener to each link
-    link.addEventListener("click", function(event) { //scroll to section on click
-        event.preventDefault(); //prevent default behavior
-
-        const sectionId = this.getAttribute("data-section"); //get the section id
-        const section = document.getElementById(sectionId); //select the section
-
-        if (section) { //if the section exists
-            section.scrollIntoView({ //scroll to the section
-                behavior: "smooth"  //smooth scroll
-            });
-        }
-    });
-});
-
 
 //#PRESENTATION CODE
 //CHANGE PRESENTATION TEXT DEPENDING ON WHETHER THE SCREEN IS SMALL OR LARGE
@@ -187,17 +170,42 @@ document.addEventListener("DOMContentLoaded", () => { //execute when the page is
 //#PORTFOLIO CODE
 //PORTFOLIO CARDS ANIMATION
 document.addEventListener("DOMContentLoaded", () => {
-    const articles = document.querySelectorAll(".portfolio__article"); //select all articles
+    const articles = document.querySelectorAll(".portfolio__article");
 
     const showOnScroll = () => {
+        let newDelay = 0; 
+
         articles.forEach(article => {
-            const rect = article.getBoundingClientRect(); //get position of article
-            if (rect.top < window.innerHeight * 0.85) { //if article is visible
-                article.classList.add("visible"); //add visible class
+            const rect = article.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.85 && !article.classList.contains("visible")) {
+                setTimeout(() => {
+                    article.classList.add("visible");
+                }, newDelay);
+                newDelay += 170; // Increase the delay for each article
             }
         });
     };
 
-    window.addEventListener("scroll", showOnScroll); //execute on scroll
-    showOnScroll(); //execute on load
+    // We use debounce to improve the performance
+    const debounce = (func, wait) => {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    };
+
+    window.addEventListener("scroll", debounce(showOnScroll, 10));
+    showOnScroll(); // executes when the page is loaded
+});
+
+// Dinamic font background url
+const articles = document.querySelectorAll(".portfolio__article");
+const placeholders = Array.from( document.querySelectorAll('.portfolio__placeholder') );
+const imgs = Array.from( document.querySelectorAll('.portfolio__img') );
+
+articles.forEach((_, index) => {
+    placeholders[index].style.backgroundImage = `url('${imgs[index].src}')`;
+    placeholders[index].style.backgroundPosition = "center";
+    placeholders[index].style.backgroundRepeat = "no-repeat";
 });
