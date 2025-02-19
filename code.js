@@ -186,12 +186,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    // We use debounce to improve the performance
-    const debounce = (func, wait) => {
-        let timeout;
-        return function(...args) {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => func.apply(this, args), wait);
+    //DEBOUNCE FUNCTION TO IMPROVE PERFORMANCE
+    const debounce = (func, wait) => { // Debounce function to limit the rate at which a function can fire
+        let timeout; // Variable to store the timeout ID
+        return function(...args) { // Return a new function that takes any number of arguments
+            clearTimeout(timeout); // Clear the previous timeout
+            timeout = setTimeout(() => func.apply(this, args), wait); // Set a new timeout to call the function after the specified wait time
         };
     };
 
@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
     showOnScroll(); // executes when the page is loaded
 });
 
-// Dinamic font background url
+//DYNAMIC PLACEHOLDER IMAGES
 const articles = document.querySelectorAll(".portfolio__article");
 const placeholders = Array.from( document.querySelectorAll('.portfolio__placeholder') );
 const imgs = Array.from( document.querySelectorAll('.portfolio__img') );

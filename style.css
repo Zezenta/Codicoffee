@@ -162,7 +162,7 @@ section {
     white-space: nowrap;
 }
 
-#current-image, #new-image, #current-laptop-image, #new-laptop-image {
+#current-image, #new-image, #current-laptop-image, #new-laptop-image { /* For the images */
     transition: transform 0.5s ease-in-out, opacity 0.5s;
     position: relative;
     white-space: nowrap;
@@ -269,38 +269,41 @@ section {
     transform: translateX(0); /* Comes back to its original position */
 }
 
-/* Opacity hover  */
-.portfolio__articles-container:hover .portfolio__article {
+/* OPACITY HOVER */
+.portfolio__articles-container:hover .portfolio__article { /* When the container is hovered */
     opacity: 0.5;
 }
-.portfolio__articles-container:hover .portfolio__article:hover {
+.portfolio__articles-container:hover .portfolio__article:hover { /* When the article is hovered */
     opacity: 1;
 }
-
+/* IMAGE WRAPPER */
 .portfolio__img-wrapper {
     width: 100%;
 }
+/* IMAGE STYLING */
 .portfolio__img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: contain; /* maintain aspect ratio */
     transition: transform 0.4s ease-out;
 }
+/* TEXT CONTAINER */
 .portfolio__text-container {
     padding: 15px;
     background-color: var(--white);
-    border-radius: 0px 0px 6px 6px; 
+    border-radius: 0px 0px 6px 6px; /* rounded corners */
 }
+/* IMAGE HOVER EFFECT */
 .portfolio__article:hover .portfolio__img {
     transform: scale(3.5);
-    filter: brightness(0.8)
+    filter: brightness(0.8); /* darken the image */
 }
-/* text */
+/* TEXT STYLING */
 .portfolio__text-container h2 {
     margin: 0;
     font-size: 1.3rem;
     color: var(--purple);
-    word-break: break-all;
+    word-break: break-all; /* break long words */
 }
 .portfolio__text-container p {
     margin: 15px 0 5px 0;
@@ -308,22 +311,19 @@ section {
     letter-spacing: 1.5px;
     color: #000;
 }
+/* PLACEHOLDER STYLING */
 .portfolio__placeholder {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     font-size: 1.9rem;
     font-weight: bolder;
     color: transparent;
     text-align: center;
     padding: 10px;
     opacity: 0;
-    
     transition: opacity 0.4s ease;
-
-    /* background: url('src/example_1.png') center no-repeat; */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -331,10 +331,11 @@ section {
     -webkit-text-stroke: 2px black;
     display: inline-block;
 }
+/* PLACEHOLDER HOVER EFFECT */
 .portfolio__article:hover .portfolio__placeholder {
     opacity: 1;
 }
-/* btn */
+/* BUTTON STYLING */
 .portfolio__btn {
     min-width: 130px;
     min-height: 50px;
