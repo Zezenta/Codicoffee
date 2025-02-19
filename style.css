@@ -208,8 +208,9 @@ section {
 
 /* -- PORTFOLIO -- */
 .portfolio {
+    /* background-color: var(--black); */
     background: rgb(86,8,122);
-background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
+    background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
     color: var(--white);
     display: flex;
     flex-direction: column;
@@ -235,42 +236,62 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
     max-width: 100%; /* for it to not overflow*/
     overflow: hidden;
 }
+
 .portfolio__article {
-    background: transparent;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+
     cursor: pointer;
+    background: transparent;
     box-shadow: 0px 0px 9px #2e2e2e;
 
     opacity: 0; /* Initially invisible */
     transform: translateX(-50px); /* Moves to the left */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out, opacity 0.4s ease-in-out;
+
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
 }
-.portfolio__article.visible:hover {
-    transform: scale(1.03);
-}
-/* animations */
+
 /* ARTICLES ON THE RIGHT MOVE TO THE LEFT */
 .portfolio__article:nth-child(2n) {
     transform: translateX(50px); /* Moves to the right */
 }
 .portfolio__article.visible {
-    opacity: 1; /* Appears */
+    opacity: 1;
     transform: translateX(0); /* Comes back to its original position */
+}
+
+/* Opacity hover  */
+.portfolio__articles-container:hover .portfolio__article {
+    opacity: 0.5;
+}
+.portfolio__articles-container:hover .portfolio__article:hover {
+    opacity: 1;
+}
+
+.portfolio__img-wrapper {
+    width: 100%;
 }
 .portfolio__img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
-    border-radius: 6px 6px 0px 0px;
+    transition: transform 0.4s ease-out;
 }
 .portfolio__text-container {
     padding: 15px;
     background-color: var(--white);
-    border-radius: 0px 0px 6px 6px;
+    border-radius: 0px 0px 6px 6px; 
 }
+.portfolio__article:hover .portfolio__img {
+    transform: scale(3.5);
+    filter: brightness(0.8)
+}
+/* text */
 .portfolio__text-container h2 {
     margin: 0;
     font-size: 1.3rem;
@@ -283,6 +304,33 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
     letter-spacing: 1.5px;
     color: #000;
 }
+.portfolio__placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 1.9rem;
+    font-weight: bolder;
+    color: transparent;
+    text-align: center;
+    padding: 10px;
+    opacity: 0;
+    
+    transition: opacity 0.4s ease;
+
+    /* background: url('src/example_1.png') center no-repeat; */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: invert(1);
+    -webkit-text-stroke: 2px black;
+    display: inline-block;
+}
+.portfolio__article:hover .portfolio__placeholder {
+    opacity: 1;
+}
+/* btn */
 .portfolio__btn {
     min-width: 130px;
     min-height: 50px;
@@ -295,8 +343,6 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
     cursor: pointer;
     font-weight: 700;
 }
-
-
 /* -- PORTFOLIO ENDS --*/
 
 
@@ -416,10 +462,9 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
     /* PORTFOLIO */
     .portfolio {
         min-height: 90vh;
-        padding: 30px;
     }
     .portfolio__articles-container {
-        max-width: 850px;
+        max-width: 700px;
         gap: 25px;
     }
     .portfolio__text-container h2 {
@@ -428,6 +473,12 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
     .portfolio__text-container p {
         white-space: normal;
         font-size: .9rem;
+    }
+    .portfolio__article:hover .portfolio__img {
+        transform: scale(2.5);
+    }
+    .portfolio__placeholder {
+        font-size: 3.2rem;
     }
     /* PORTFOLIO ENDS */
 

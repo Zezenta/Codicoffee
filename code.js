@@ -198,3 +198,14 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", debounce(showOnScroll, 10));
     showOnScroll(); // executes when the page is loaded
 });
+
+// Dinamic font background url
+const articles = document.querySelectorAll(".portfolio__article");
+const placeholders = Array.from( document.querySelectorAll('.portfolio__placeholder') );
+const imgs = Array.from( document.querySelectorAll('.portfolio__img') );
+
+articles.forEach((_, index) => {
+    placeholders[index].style.backgroundImage = `url('${imgs[index].src}')`;
+    placeholders[index].style.backgroundPosition = "center";
+    placeholders[index].style.backgroundRepeat = "no-repeat";
+});
