@@ -407,7 +407,7 @@ section {
 
 
 
-@media (min-width: 768px) {
+@media (min-aspect-ratio: 4/3) { /* For when the aspect ratio is 4:3 (landscape) or more */
     /* HEADER */
     .menu-toggle {
         display: none;

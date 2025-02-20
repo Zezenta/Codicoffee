@@ -47,9 +47,9 @@ sections.forEach(section => observer.observe(section));
 function adjustPresentationText() {
     const presentationText = document.getElementById('presentationtext');
     if (window.innerWidth < 768) {
-        presentationText.innerHTML = 'Hacemos un<br>sitio web<br>para tu<br><span id="dynamic-word">Negocio</span>';
+        presentationText.innerHTML = 'Hacemos un <span style="display: block;">sitio web <span style="display: block;">para tu <span style="display: block;"><span id="dynamic-word">Negocio</span>';
     } else {
-        presentationText.innerHTML = 'Hacemos un sitio web<br>para tu <span id="dynamic-word">Negocio</span>';
+        presentationText.innerHTML = 'Hacemos un sitio web <span style="display: block;">para tu <span id="dynamic-word">Negocio</span>';
     }
     wordElement = document.getElementById("dynamic-word"); //update reference
 }
