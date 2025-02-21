@@ -44,12 +44,17 @@ sections.forEach(section => observer.observe(section));
 
 //#PRESENTATION CODE
 //CHANGE PRESENTATION TEXT DEPENDING ON WHETHER THE SCREEN IS SMALL OR LARGE
+const brushStrokeSVG = `<span class="TextShape-node">
+    <svg viewBox="0 0 300 60" width="100%" height="100%">
+        <path id="brush-stroke" d="M 0,56.43 c 31.625,-1.5675000000000026 63.25,-4.845000000000006 126.5,-6.269999999999996 c 63.25,-1.4249999999999972 96.14000000000001,7.105427357601002e-15 126.5,0.5700000000000003 c 6.072000000000003,0.11399999999999721 -4.807000000000016,1.6244999999999976 -5.060000000000002,1.7100000000000009"></path>
+    </svg>
+</span>`;
 function adjustPresentationText() {
     const presentationText = document.getElementById('presentationtext');
-    if (window.innerWidth < 768) {
-        presentationText.innerHTML = 'Hacemos un <span style="display: block;">sitio web <span style="display: block;">para tu <span style="display: block;"><span id="dynamic-word">Negocio</span>';
+    if (window.innerWidth < 768) { //if the screen is small
+        presentationText.innerHTML = 'Hacemos un <span style="display: block;">sitio web <span style="display: block;">para tu <span style="display: block;"><span style="display: block;"><span class="presentation__text__container"><span id="dynamic-word">Negocio</span>' + brushStrokeSVG + '</span></span>';
     } else {
-        presentationText.innerHTML = 'Hacemos un sitio web <span style="display: block;">para tu <span id="dynamic-word">Negocio</span>';
+        presentationText.innerHTML = 'Hacemos un sitio web <span style="display: block;">para tu <span class="presentation__text__container"><span id="dynamic-word">Negocio</span>' + brushStrokeSVG + '</span></span>';
     }
     wordElement = document.getElementById("dynamic-word"); //update reference
 }
@@ -58,22 +63,29 @@ window.addEventListener('resize', adjustPresentationText); //adjust text on resi
 
 //CHANGING WORDS DYNAMICALLY
 document.addEventListener("DOMContentLoaded", () => {
-    const words = ["Restaurante", "Bar", "Hotel", "Profesión"];
-    let wordElement = document.getElementById("dynamic-word");
+    const words = ["Restaurante", "Discoteca", "Hotel", "Profesión"];
+    let wordElement = document.getElementById("dynamic-word"); //select the word element
+    let brushElement = document.querySelector(".TextShape-node"); //select the brush element
+    let brushPath = document.querySelector(".TextShape-node svg path"); //select the path element
     let index = 0;
 
     function changeWord() {
-        //update reference
+        //UPDATE REFERENCES
         wordElement = document.getElementById("dynamic-word");
+        brushElement = document.querySelector(".TextShape-node"); //select the brush element
+        brushPath = document.querySelector(".TextShape-node svg path"); //select the path element
 
         wordElement.style.transition = "transform 0.5s ease-in-out, opacity 0.5s"; //transition
         wordElement.style.transform = "translateX(-50%)"; //move to the left
         wordElement.style.opacity = "0"; //disappear word
 
+        brushPath.style.transition = "stroke-dashoffset 0.5s ease-in-out"; //add transition for stroke dash offset
+        brushPath.style.strokeDashoffset = "300"; //reset the stroke dash offset to animate it again
+
         setTimeout(() => {
             //change word and reposition
             index = (index + 1) % words.length;
-            wordElement.textContent = words[index];
+            wordElement.innerHTML = words[index]; //to include HTML tags and new word
             wordElement.style.transition = "none"; //deletes transition to reposition instantly
             wordElement.style.transform = "translateX(50%)";
 
@@ -82,6 +94,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 wordElement.style.transition = "transform 0.5s ease-in-out, opacity 0.5s";
                 wordElement.style.transform = "translateX(0)";
                 wordElement.style.opacity = "1";
+
+                brushPath.style.transition = "stroke-dashoffset 0.5s ease-in-out"; //add transition for stroke dash offset
+                brushPath.style.strokeDashoffset = "0"; //animate the stroke dash offset
             }, 50); //small delay to ensure the repositioning
         }, 500); //waits for the word to disappear
     }

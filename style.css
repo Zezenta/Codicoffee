@@ -168,6 +168,40 @@ section {
     white-space: nowrap;
 }
 
+.presentation__text__container { /* The container for the text AND the SVG */
+    position: relative;
+    display: inline-block;
+}
+.TextShape-node { /* The div that contains the SVG */
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    width: 140%; /* Make it 140% bigger than the word */
+    max-width: 300px; /* But not more than 300px because then we mess with the path's position*/
+    height: 59px;
+}
+.TextShape-node svg { /* The SVG inside the div */
+    width: 100%;
+    height: 59px;
+    fill: none;
+    stroke: rgb(44, 160, 255);
+    stroke-width: 10px;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: draw 0.5s ease-in-out forwards;
+}
+@keyframes draw { /* Animation */
+    from {
+        stroke-dasharray: 300;
+        stroke-dashoffset: 300;
+    }
+    to {
+        stroke-dasharray: 300;
+        stroke-dashoffset: 0;
+    }
+}
+/* PRESENTATION ENDS */
+
 
 /* Services */
 .services {
