@@ -384,9 +384,37 @@ section {
 }
 /* -- PORTFOLIO ENDS --*/
 
+/* PRICES */
+.precios{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px 0px; /* 20px up, 10px to the sides, 0px down */
+}
+.precios h2{
+    margin: 0;
+}
+.precios__container{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.precios__container ul{
+    padding-left: 20px;
+}
+.precios__container p, .precios_container li{
+    font-size: 1.2rem;
+}
+#precios__footer__text{
+    font-size: 1.2rem;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+/* -- PRICES ENDS -- */
 
 /* -- ABOUT --*/
 .about {
+    padding-top: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -525,6 +553,36 @@ section {
         font-size: 3.2rem;
     }
     /* PORTFOLIO ENDS */
+
+    /* PRICES */
+    .precios {
+        align-items: center; /* Centra horizontalmente */
+    }
+    .precios__container{
+        padding-top: 30px;
+        flex-direction: row;
+        width: 80%;
+        flex: 1; /* Both take up equal space */
+        min-height: 40vh; /* Set a reasonable minimum height */
+    }
+    .precios__container__text{
+        padding: 0px 50px;
+        width: 60%;
+        flex: 1; /* Both take up equal space */
+        min-height: 40vh; /* Set a reasonable minimum height */
+        max-width: 1000px; /* Ajusta según lo que prefieras */
+    }
+    .precios__container__text p{
+        margin: 0px;
+    }
+    .precios__container__graphics{
+        width: 40%;
+        height: 100%;
+    }
+    .precios__container__text p, .precios__container__text li{
+        font-size: 1.6vw;
+    }
+    /* PRICES ENDS */
 
     /* ABOUT */
     .about__members-container {
