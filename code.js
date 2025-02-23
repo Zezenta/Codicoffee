@@ -224,3 +224,15 @@ articles.forEach((_, index) => {
     placeholders[index].style.backgroundPosition = "center";
     placeholders[index].style.backgroundRepeat = "no-repeat";
 });
+
+//FAQ SECTION
+document.querySelectorAll('.faq-question').forEach(question => { //select all questions
+    question.addEventListener('click', () => { //add click event to each question
+        const answer = question.nextElementSibling; //uses nextElementSibling to select the answer
+        const icon = question.querySelector('.toggle-icon'); //select the icon inside the question
+        
+        //TOGGLE ACTIVE CLASS
+        answer.classList.toggle('active');
+        icon.classList.toggle('active');
+    });
+});

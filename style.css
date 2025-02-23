@@ -414,7 +414,7 @@ section {
 .precios__container__graphics {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Espacio entre los elementos */
+    gap: 20px; /* Space between the elements */
     width: 100%;
 }
 
@@ -432,7 +432,7 @@ section {
     background-color: black;
 }
 .nosotros {
-    background-color: #9b4faa; /* Morado */
+    background-color: #9b4faa;
     justify-content: space-evenly;
 }
 
@@ -459,7 +459,7 @@ section {
 .precios__container__graphics li{
     font-size: 1.2rem;
     font-weight: bold;
-    margin: 0; /* Elimina márgenes para que el texto se ajuste mejor */
+    margin: 0; /* Deletes margins so the text fits better */
 }
 
 .otros span {
@@ -533,6 +533,67 @@ section {
 }
 /* -- ABOUT ENDS --*/
 
+
+/* FAQ */
+.preguntas-frecuentes{
+    width: 100%;
+    justify-self: center;
+    padding-top: 0;
+}
+.faq__title{
+    margin: 0;
+    margin-bottom: 25px;;
+}
+
+.faq-item {
+    border: 2px solid #ccc;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.faq-question {
+    background: #f1f1f1;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    transition: background 0.1s; /* Time for background color to change when hovered */
+    font-size : 1.5rem;
+}
+.faq-question:hover {
+    background: #e0e0e0;
+}
+.toggle-icon {
+    margin-right: 10px;
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+}
+.faq-answer {
+    max-height: 0; /* Height of 0 so it's not visible */
+    overflow: hidden; /* Hides its content */
+    transition: max-height 0.5s ease, padding 0.5s ease; /* It makes the transition smooth, it takes 0.5 seconds, and it eases in and out */
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 1.2rem;
+}
+.faq-answer.active {
+    max-height: 500px; /* Gives it space */
+    padding: 10px; /* Padding in the answer text */
+}
+.faq-answer p{
+    margin: 0; /* So it doesn't have a margin and the padding is the only space */
+}
+
+.toggle-icon {
+    transition: transform 0.5s ease;
+}
+
+.toggle-icon.active {
+    transform: rotate(45deg); /* Rotates the icon */
+}
+/* FAQ ENDS */
 
 
 @media (min-aspect-ratio: 4/3) { /* For when the aspect ratio is 4:3 (landscape) or more */
@@ -622,7 +683,7 @@ section {
 
     /* PRICES */
     .precios {
-        align-items: center; /* Centra horizontalmente */
+        align-items: center; /* Centers the elements horizontally */
     }
     .precios__container{
         padding-top: 30px;
@@ -633,10 +694,10 @@ section {
     }
     .precios__container__text{
         padding: 0px 50px;
-        width: 60%;
+        width: 60%; /* Text takes more space */
         flex: 1; /* Both take up equal space */
         min-height: 40vh; /* Set a reasonable minimum height */
-        max-width: 1000px; /* Ajusta según lo que prefieras */
+        max-width: 1000px; /* So it doesn't overflow */
     }
     .precios__container__text p{
         margin: 0px;
@@ -649,8 +710,8 @@ section {
     .precios__container__graphics {
         display: flex;
         justify-content: center;
-        gap: 20px; /* Espacio entre los elementos */
-        width: 40%;
+        gap: 20px; /* Space between the elements */
+        width: 40%; /* Graphics take less space */
     }
     
     .box {
@@ -667,12 +728,12 @@ section {
         background-color: black;
     }
     .nosotros {
-        background-color: #9b4faa; /* Morado */
+        background-color: #9b4faa;/
     }
     
     .precios__container__graphics h2 {
-        text-align: center; /* Centra el texto horizontalmente */
-        margin: 0; /* Elimina márgenes para que el texto se ajuste mejor */
+        text-align: center; /* Centers title horizontally */
+        margin: 0; /* Deletes margins so the text fits better */
         display: flex;
         justify-content: center;
         text-align: center;
@@ -694,7 +755,7 @@ section {
     .precios__container__graphics li{
         font-size: 1.5vw;
         font-weight: bold;
-        margin: 0; /* Elimina márgenes para que el texto se ajuste mejor */
+        margin: 0;
     }
 
     .otros span {
@@ -733,4 +794,13 @@ section {
         max-width: 450px;
     }
     /* ABOUT ENDS */
+    
+    /* FAQ */
+    .preguntas-frecuentes{
+        width: 80%; /* Doesnt occupy the whole screen in desktpo*/
+    }
+    .faq-question {
+        padding: 15px; /* More padding in desktop*/
+    }
+    /* FAQ ENDS */
 }
