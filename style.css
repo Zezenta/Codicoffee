@@ -595,6 +595,30 @@ section {
 }
 /* FAQ ENDS */
 
+/* MANABI */
+.manabi{
+    padding: 0;
+    padding-bottom: 25px;
+}
+.manabi__title{
+    justify-self: center;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+#manabi__green{
+    color: #078930;
+}
+#manabi__red{
+    color: #da121a;
+}
+.manabi__img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+}
+/* MANABI ENDS */
+
 
 @media (min-aspect-ratio: 4/3) { /* For when the aspect ratio is 4:3 (landscape) or more */
     /* HEADER */
@@ -803,4 +827,19 @@ section {
         padding: 15px; /* More padding in desktop*/
     }
     /* FAQ ENDS */
+
+    /* MANABI */
+    .manabi__title{
+        font-size: 2rem;
+    }
+    .manabi__img{
+        width: 20%;
+    }
+
+    @media (min-width: 1600px){
+        .manabi__img {
+            width: 15%;
+        }
+    }
+    /* MANABI ENDS */
 }
