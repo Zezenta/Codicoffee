@@ -377,7 +377,7 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 36%, r
 }
 .about__members {
     background: #333;
-    padding: 25px 5px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 90%;
@@ -394,20 +394,20 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 36%, r
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 10px;
+    row-gap: 5px;
 }
 .about__members h3 {
     margin: 0;
 }
 .about__members img {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
 }
 .about__members ul {
     margin: 0;
     list-style: none;
-    margin-bottom: 12px;
+    padding: 10px;
 }
 .about__members ul li {
     margin-bottom: 13px;
@@ -483,7 +483,7 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 36%, r
         min-height: 90vh;
     }
     .portfolio__title {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
     }
     .portfolio__articles-container {
         max-width: 750px;
@@ -509,11 +509,11 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 36%, r
     .about__members-container {
         flex-direction: row;
         justify-content: center;
-        column-gap: 30px;
+        column-gap: 60px;
         width: 100%;
     }
     .about__title {
-        font-size: clamp(2rem, 7vw, 3.5rem);
+        font-size: 2.5rem;
     }
     .about__info-container {
         min-width: 100px;
@@ -521,8 +521,10 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 36%, r
     .about__members {
         flex-direction: row;
         min-height: 270px;
-        min-width: 290px;
-        max-width: 450px;
+        max-width: 480px;
+    }
+    .about__info-container {
+        min-width: 140px;
     }
     /* ABOUT ENDS */
 }
