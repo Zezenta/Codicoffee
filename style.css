@@ -162,11 +162,45 @@ section {
     white-space: nowrap;
 }
 
-#current-image, #new-image, #current-laptop-image, #new-laptop-image {
+#current-image, #new-image, #current-laptop-image, #new-laptop-image { /* For the images */
     transition: transform 0.5s ease-in-out, opacity 0.5s;
     position: relative;
     white-space: nowrap;
 }
+
+.presentation__text__container { /* The container for the text AND the SVG */
+    position: relative;
+    display: inline-block;
+}
+.TextShape-node { /* The div that contains the SVG */
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    width: 140%; /* Make it 140% bigger than the word */
+    max-width: 300px; /* But not more than 300px because then we mess with the path's position*/
+    height: 59px;
+}
+.TextShape-node svg { /* The SVG inside the div */
+    width: 100%;
+    height: 59px;
+    fill: none;
+    stroke: rgb(44, 160, 255);
+    stroke-width: 10px;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: draw 0.5s ease-in-out forwards;
+}
+@keyframes draw { /* Animation */
+    from {
+        stroke-dasharray: 300;
+        stroke-dashoffset: 300;
+    }
+    to {
+        stroke-dasharray: 300;
+        stroke-dashoffset: 0;
+    }
+}
+/* PRESENTATION ENDS */
 
 
 /* Services */
@@ -272,38 +306,41 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 36%, r
     transform: translateX(0); /* Comes back to its original position */
 }
 
-/* Opacity hover  */
-.portfolio__articles-container:hover .portfolio__article {
+/* OPACITY HOVER */
+.portfolio__articles-container:hover .portfolio__article { /* When the container is hovered */
     opacity: 0.5;
 }
-.portfolio__articles-container:hover .portfolio__article:hover {
+.portfolio__articles-container:hover .portfolio__article:hover { /* When the article is hovered */
     opacity: 1;
 }
-
+/* IMAGE WRAPPER */
 .portfolio__img-wrapper {
     width: 100%;
 }
+/* IMAGE STYLING */
 .portfolio__img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: contain; /* maintain aspect ratio */
     transition: transform 0.4s ease-out;
 }
+/* TEXT CONTAINER */
 .portfolio__text-container {
     padding: 15px;
     background-color: var(--white);
-    border-radius: 0px 0px 6px 6px; 
+    border-radius: 0px 0px 6px 6px; /* rounded corners */
 }
+/* IMAGE HOVER EFFECT */
 .portfolio__article:hover .portfolio__img {
     transform: scale(3.5);
-    filter: brightness(0.8)
+    filter: brightness(0.8); /* darken the image */
 }
-/* text */
+/* TEXT STYLING */
 .portfolio__text-container h2 {
     margin: 0;
     font-size: 1.3rem;
     color: var(--purple);
-    word-break: break-all;
+    word-break: break-all; /* break long words */
 }
 .portfolio__text-container p {
     margin: 15px 0 5px 0;
@@ -311,22 +348,19 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 36%, r
     letter-spacing: 1.5px;
     color: #000;
 }
+/* PLACEHOLDER STYLING */
 .portfolio__placeholder {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     font-size: 1.9rem;
     font-weight: bolder;
     color: transparent;
     text-align: center;
     padding: 10px;
     opacity: 0;
-    
     transition: opacity 0.4s ease;
-
-    /* background: url('src/example_1.png') center no-repeat; */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -334,10 +368,11 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 36%, r
     -webkit-text-stroke: 2px black;
     display: inline-block;
 }
+/* PLACEHOLDER HOVER EFFECT */
 .portfolio__article:hover .portfolio__placeholder {
     opacity: 1;
 }
-/* btn */
+/* BUTTON STYLING */
 .portfolio__btn {
     min-width: 130px;
     min-height: 50px;
@@ -416,7 +451,7 @@ background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 36%, r
 
 
 
-@media (min-width: 768px) {
+@media (min-aspect-ratio: 4/3) { /* For when the aspect ratio is 4:3 (landscape) or more */
     /* HEADER */
     .menu-toggle {
         display: none;
