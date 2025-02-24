@@ -224,3 +224,32 @@ articles.forEach((_, index) => {
     placeholders[index].style.backgroundPosition = "center";
     placeholders[index].style.backgroundRepeat = "no-repeat";
 });
+
+
+// ABOUT ARTICLES ANIMATION
+document.addEventListener("DOMContentLoaded", () => {
+    const aboutSection = document.querySelector('.about');
+    const aboutMembers = document.querySelectorAll('.about__members');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                aboutMembers.forEach((member, index) => {
+                    member.classList.add('visible');
+
+                    // underline retarded efect
+                    setTimeout(() => {
+                        const h3 = member.querySelector('h3');
+                        h3.classList.add('underline-active');
+                    }, 600 + index * 300); // Increment the time for the retarded effect
+                });
+
+                observer.unobserve(aboutSection); // Stop observing after first time
+            }
+        });
+    }, {
+        threshold: 0.3 // Animaton activaded when section is 30% visible
+    });
+
+    observer.observe(aboutSection);
+});
