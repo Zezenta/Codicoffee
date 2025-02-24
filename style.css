@@ -488,6 +488,15 @@ section {
     padding-left: 30px;
     margin-bottom: 8px;
     line-height: 1.5;
+
+    /* Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.about__members ul li.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 .about__members ul li::before {
     content: "";

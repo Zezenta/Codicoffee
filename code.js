@@ -227,7 +227,7 @@ articles.forEach((_, index) => {
 
 
 // ABOUT ARTICLES ANIMATION
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
     const aboutSection = document.querySelector('.about');
     const aboutMembers = document.querySelectorAll('.about__members');
 
@@ -235,20 +235,29 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 aboutMembers.forEach((member, index) => {
+                    // Animation for articles
                     member.classList.add('visible');
 
-                    // underline retarded efect
+                    // Underline animation
                     setTimeout(() => {
                         const h3 = member.querySelector('h3');
                         h3.classList.add('underline-active');
-                    }, 600 + index * 300); // Increment the time for the retarded effect
+
+                        // Animation for li
+                        const lis = member.querySelectorAll('li');
+                        lis.forEach((li, liIndex) => {
+                            setTimeout(() => {
+                                li.classList.add('visible');
+                            }, 600 + liIndex * 300); // li delay
+                        });
+                    }, 600 + index); // underline delay
                 });
 
                 observer.unobserve(aboutSection); // Stop observing after first time
             }
         });
     }, {
-        threshold: 0.3 // Animaton activaded when section is 30% visible
+        threshold: 0.3 // Activate when section is 30% visible
     });
 
     observer.observe(aboutSection);
