@@ -262,3 +262,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
     observer.observe(aboutSection);
 });
+
+// QUESTION ANIMATION
+document.addEventListener('DOMContentLoaded', () => {
+    const questionsSection = document.querySelector('.questions');
+    const detailsItems = document.querySelectorAll('.questions__item');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 300); 
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    detailsItems.forEach(item => {
+        observer.observe(item);
+    });
+});
+
+// DETAIL ANIMATION
+document.querySelectorAll(".questions__item").forEach((details) => {
+    const summary = details.querySelector("summary");
+    const content = details.querySelector(".questions__answer");
+
+    summary.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        if (details.hasAttribute("open")) {
+            // Close animation
+            content.style.height = `${content.scrollHeight}px`; // Set current height
+            setTimeout(() => {  // Animation delay
+                content.style.height = "0";
+                content.style.opacity = "0";
+                content.style.marginBottom = "0";
+            }, 10);
+            setTimeout(() => details.removeAttribute("open"), 300); // Esperar animación y cerrar
+        } else {
+            // open animation
+            details.setAttribute("open", "true");
+            content.style.height = "0"; // Reset to animate from 0
+            setTimeout(() => { // Animation delay
+                content.style.height = `${content.scrollHeight}px`;
+                content.style.opacity = "1";
+                content.style.marginBottom = "15px";
+            }, 10);
+        }
+    });
+});
