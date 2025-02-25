@@ -144,17 +144,17 @@
 
         <!-- Precios -->
         <section class="precios section" id="precios">
-            <h2 style="text-align: center; font-size: clamp(2rem, 7vw, 3.5rem);">Precios</h2>
+            <h2>Precios</h2>
             <div class="precios__container">
                 <div class="precios__container__text">
                     <p>Gracias a nuestra estructura flexible y a que somos un equipo de estudiantes apasionados por el desarrollo web, podemos ofrecer los mejores precios del país.</p>
                     <ul>
                         <li>💰 Sin tarifas fijas, ni costos inflados. <strong>Solo pagas por lo que realmente necesitas.</strong></li>
                         <li><strong>📄 Sin límite de páginas.</strong> No te cobramos por cantidad, sino por funcionalidad y calidad.</li>
-                        <li>🚀 Webs profesionales desde solo $100. Otros pueden cobrarte $200, $400 o incluso $800 por lo mismo. Nosotros te ofrecemos <strong>la mejor opción al mejor precio.</strong>
+                        <li>🚀 Webs profesionales desde solo $100. Otros pueden cobrarte $200, $400 o incluso $800 por lo mismo. Nosotros te ofrecemos <strong>la mejor opción, al mejor precio.</strong>
                 </div>
                 <div class="precios__container__graphics">
-                    <div class="box otros">
+                    <div class="box box--otros">
                         <h2>Otros Proveedores</h2>
                         <ul>
                             <li>Precios inflados</li>
@@ -163,7 +163,7 @@
                         </ul>
                         <span>$200 $400 $800</span>
                     </div>
-                    <div class="box nosotros">
+                    <div class="box box--nosotros">
                         <h2>Nosotros</h2>
                         <ul>
                             <li>Pagas por lo que necesitas, ni un dólar más</li>
@@ -208,78 +208,56 @@
             </div>
         </section>
 
-        <section class="preguntas-frecuentes section" id="preguntas-frecuentes">
-            <h2 class="faq__title" style="text-align: center; font-size: clamp(2rem, 7vw, 3.5rem);">Preguntas Frecuentes</h2>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span class="toggle-icon">+</span>
-                    <span>¿Hay algún cobro mensual por mantener activa la web?</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Sí. Este precio es de $5 para páginas web normales, cuya función es principalmente informativa. Si la web tiene funciones y sistemas más avanzados y complejos, este precio puede aumentar.</p>
-                </div>
-            </div>
+        <section class="questions">
+            <h2 class="questions__title">Preguntas Frecuentes</h2>
+            <details class="questions__item questions__item--open">
+                <summary class="questions__question">¿Hay algún cobro mensual por mantener activa la web?</summary>
+                <p class="questions__answer">
+                    Sí. Este precio es de $5 para páginas web normales, cuya función es principalmente informativa. Si la web tiene funciones y sistemas más avanzados y complejos, este precio puede aumentar.
+                </p>
+            </details>
             
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span class="toggle-icon">+</span>
-                    <span>¿Los precios incluyen impuestos? ¿Facturan?</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Como somos una microempresa informal, no cobramos impuestos de ningún tipo. Todo pago se hace por medio de transferencias bancarias normales.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span class="toggle-icon">+</span>
-                    <span>¿La web la tengo que diseñar yo o la diseñan ustedes?</span>
-                </div>
-                <div class="faq-answer">
-                    <p>¡Como prefieras! Si ya tienes una idea de cómo quieres que se vea tu sitio web, la podemos implementar por ti. Si no quieres preocuparte por esto, nosotros nos encargamos de todo, pidiéndote opiniones durante el diseño. Puedes estar tan involucrado en el diseño como quieras.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span class="toggle-icon">+</span>
-                    <span>¿Cuánto tiempo demoran en construir la web?</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Depende de cuánto contenido tengamos que construir. Para una página web promedio, tardamos alrededor de 2 semanas. Este tiempo puede variar dependiendo de la cantidad de trabajo y nuestras responsabilidades personales (¡somos universitarios después de todo!).</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span class="toggle-icon">+</span>
-                    <span>¿Tengo que pagar por adelantado?</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Pedimos la mitad del pago antes del desarrollo y la otra mitad cuando hayamos terminado el trabajo.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span class="toggle-icon">+</span>
-                    <span>Si quiero cambiar de proveedor o encargarme yo mismo del sitio web, ¿puedo hacerlo?</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Sí, si decides cambiar de proveedor o encargarte tú mismo del mantenimiento, te enviaremos todo el código de tu sitio web para que puedas gestionarlo sin problemas.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span class="toggle-icon">+</span>
-                    <span>¿Desarrollan versiones tanto para computadora como para celulares?</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Sí, todas las webs que hacemos son adaptables tanto para computadoras como para celulares. No hay costo extra por esto.</p>
-                </div>
-            </div>
-                  
+            <details class="questions__item questions__item--open">
+                <summary class="questions__question">¿Los precios incluyen impuestos? ¿Facturan?</summary>
+                <p class="questions__answer">
+                    Como somos una microempresa informal, no cobramos impuestos de ningún tipo. Todo pago se hace por medio de transferencias bancarias normales.
+                </p>
+            </details>
+
+            <details class="questions__item questions__item--open">
+                <summary class="questions__question">¿La web la tengo que diseñar yo o la diseñan ustedes?</summary>
+                <p class="questions__answer">
+                    ¡Como prefieras! Si ya tienes una idea de cómo quieres que se vea tu sitio web, la podemos implementar por ti. Si no quieres preocuparte por esto, nosotros nos encargamos de todo, pidiéndote opiniones durante el diseño. Puedes estar tan involucrado en el diseño como quieras.
+                </p>
+            </details>
+
+            <details class="questions__item questions__item--open">
+                <summary class="questions__question">¿Cuánto tiempo demoran en construir la web?</summary>
+                <p class="questions__answer">
+                    Depende de cuánto contenido tengamos que construir. Para una página web promedio, tardamos alrededor de 2 semanas. Este tiempo puede variar dependiendo de la cantidad de trabajo y nuestras responsabilidades personales (¡somos universitarios después de todo!).
+                </p>
+            </details>
+
+            <details class="questions__item questions__item--open">
+                <summary class="questions__question">¿Tengo que pagar por adelantado?</summary>
+                <p class="questions__answer">
+                    Pedimos la mitad del pago antes del desarrollo y la otra mitad cuando hayamos terminado el trabajo.
+                </p>
+            </details>
+
+            <details class="questions__item questions__item--open">
+                <summary class="questions__question">Si quiero cambiar de proveedor o encargarme yo mismo del sitio web, ¿puedo hacerlo?</summary>
+                <p class="questions__answer">
+                    Sí, si decides cambiar de proveedor o encargarte tú mismo del mantenimiento, te enviaremos todo el código de tu sitio web para que puedas gestionarlo sin problemas.
+                </p>
+            </details>
+
+            <details class="questions__item questions__item--open">
+                <summary class="questions__question">¿Desarrollan versiones tanto para computadora como para celulares?</summary>
+                <p class="questions__answer">
+                    Sí, todas las webs que hacemos son adaptables tanto para computadoras como para celulares. No hay costo extra por esto.
+                </p>
+            </details>
         </section>
 
         <section class="manabi section">

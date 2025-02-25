@@ -210,7 +210,7 @@ section {
     text-align: center;
 }
 .services__title {
-    font-size: 28px;
+    font-size: clamp(2rem, 5vw, 2.5rem);
     margin-bottom: 20px;
 }
 .service__cards-container {
@@ -222,7 +222,7 @@ section {
 .service__card {
     background-color: #333;
     color: white;
-    padding: 20px 10px;
+    padding: 20px;
     border-radius: 10px;
     width: 300px;
     height: 300px;
@@ -232,7 +232,7 @@ section {
     margin-top: 10px;
 }
 .service__cards p {
-    font-size: 14px;
+    font-size: 1rem;
 }
 .service__circle {
     width: 50px;
@@ -394,21 +394,44 @@ section {
 .precios{
     display: flex;
     flex-direction: column;
-    padding: 20px 10px 0px; /* 20px up, 10px to the sides, 0px down */
+    padding: 35px; /* 20px up, 10px to the sides, 0px down */
+    max-width: 750px;
+    margin: auto;
 }
 .precios h2{
     margin: 0;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    text-align: center;
 }
 .precios__container{
     display: flex;
     flex-direction: column;
-    align-items: stretch;
 }
-.precios__container ul{
-    padding-left: 20px;
+.precios__container__text ul{
+    list-style: none;
 }
-.precios__container p, .precios_container li{
+
+.precios__container__text ul li {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    position: relative;
+}
+.precios__container__text ul li::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    width: 30px;
+    height: 30px;
+    background-image: url('data:image/svg+xml;utf8,%3Csvg version="1.0" xmlns="http://www.w3.org/2000/svg" width="640.000000pt" height="640.000000pt" viewBox="0 0 640.000000 640.000000" preserveAspectRatio="xMidYMid meet"%3E%3Cg transform="translate(0.000000,640.000000) scale(0.100000,-0.100000)" fill="%23830abb" stroke="none"%3E%3Cpath d="M3519 4430 c-377 -60 -752 -262 -1060 -571 -491 -493 -673 -1150 -429 -1550 37 -62 40 -64 76 -62 58 4 200 51 289 95 117 59 228 140 336 248 199 197 265 322 369 700 78 281 179 466 354 648 181 189 397 335 585 397 l53 17 -43 20 c-91 41 -190 59 -334 63 -77 2 -165 0 -196 -5z"/%3E%3Cpath d="M4275 4153 c-241 -57 -420 -159 -611 -348 -173 -173 -261 -324 -330 -573 -94 -335 -150 -467 -265 -624 -85 -114 -254 -280 -374 -365 -92 -65 -227 -140 -284 -158 -13 -4 -40 -14 -60 -22 l-36 -15 36 -19 c86 -44 196 -63 359 -63 239 -1 423 46 665 166 147 73 177 92 313 192 421 310 712 755 777 1186 34 218 0 425 -94 580 -38 64 -52 74 -96 63z"/%3E%3C/g%3E%3C/svg%3E');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.precios__container__text ul li strong {
+    color: var(--purple);
+}
+.precios__container__text p {
     font-size: 1.2rem;
+    text-align: center;
 }
 #precios__footer__text{
     font-size: 1.2rem;
@@ -420,67 +443,59 @@ section {
 .precios__container__graphics {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Space between the elements */
+    gap: 10px;
     width: 100%;
+    margin-top: 10px;
 }
 
 .box {
-    padding: 10px;
-    color: white;
-    font-family: "Inter", sans-serif;
-    border-radius: 5px;
-    width: 50%;
+    padding: 17px;
+    color: var(--white);
+    border-radius: 6px;
+    flex-grow: 1;
+    box-shadow: 0 0 5px #0f0e0e;
+    max-width: 50%;
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-.otros {
-    background-color: black;
+.box--otros {
+    background-color: var(--black);
 }
-.nosotros {
-    background-color: #9b4faa;
-    justify-content: space-evenly;
+.box--nosotros {
+    background-color: var(--purple);
 }
-
-.precios__container__graphics h2 {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+.box h2 {
     margin: 0;
+    text-align: center;
+    font-size: 2rem;
 }
-.otros h2 {
-    font-size: 5vw;
-}
-.nosotros h2 {
-    font-size: 8vw;
-}
-
-.precios__container__graphics ul{
-    padding-inline: 0;
+.box ul{
+    padding: 0;
     list-style: none;
-}
-.nosotros ul{
-    margin: 4px 0 16px 0;
-}
-.precios__container__graphics li{
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 0; /* Deletes margins so the text fits better */
-}
+    text-align: center;
 
-.otros span {
-    color: rgb(255, 0, 0);
-    font-size: 7vw;
-    font-weight: bold;
-    text-align: center;
+    font-size: 1.3rem;
 }
-.nosotros span {
-    color: rgb(30, 255, 0);
-    font-size: 10vw;
-    font-weight: bold;
+.box ul li {
+    margin-bottom: 10px;
+}
+.box span {
     text-align: center;
-    display: flex;
-    justify-content: center;
+    
+}
+.box--otros span {
+    color: rgb(255, 55, 55);
+    font-size: 1.7rem;
+}
+.box--nosotros span {
+    color: rgb(30, 255, 0);
+    font-size: 3rem;
+}
+.precios button {
+    align-self: center;
+    padding: 1px 10px;
 }
 /* -- PRICES ENDS -- */
 
@@ -606,66 +621,40 @@ section {
 /* -- ABOUT ENDS --*/
 
 
-/* FAQ */
-.preguntas-frecuentes{
-    width: 100%;
-    justify-self: center;
-    padding-top: 0;
-}
-.faq__title{
-    margin: 0;
-    margin-bottom: 25px;;
-}
+/* QUESTIONS */
+.questions {
+    background: rgb(131,10,187);
+    background: linear-gradient(0deg, rgba(131,10,187,1) 0%, rgba(75,25,99,1) 30%, rgba(34,35,36,1) 80%);
+    padding: 40px;
 
-.faq-item {
-    border: 2px solid #ccc;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    overflow: hidden;
-}
-.faq-question {
-    background: #f1f1f1;
-    padding: 5px;
-    cursor: pointer;
     display: flex;
-    align-items: center;
-    font-weight: bold;
-    transition: background 0.1s; /* Time for background color to change when hovered */
-    font-size : 1.5rem;
+    flex-direction: column;
+    row-gap: 20px;
 }
-.faq-question:hover {
-    background: #e0e0e0;
-}
-.toggle-icon {
-    margin-right: 10px;
-    font-size: 18px;
-    width: 20px;
+.questions__title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
     text-align: center;
+    margin-bottom: 10px;
+    color: var(--white);
 }
-.faq-answer {
-    max-height: 0; /* Height of 0 so it's not visible */
-    overflow: hidden; /* Hides its content */
-    transition: max-height 0.5s ease, padding 0.5s ease; /* It makes the transition smooth, it takes 0.5 seconds, and it eases in and out */
-    padding-top: 0;
-    padding-bottom: 0;
-    font-size: 1.2rem;
+.questions__item {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .2s ease;
 }
-.faq-answer.active {
-    max-height: 500px; /* Gives it space */
-    padding: 10px; /* Padding in the answer text */
-}
-.faq-answer p{
-    margin: 0; /* So it doesn't have a margin and the padding is the only space */
+.questions__item:hover {
+background-color: #d5d5d5;
 }
 
-.toggle-icon {
-    transition: transform 0.5s ease;
+.questions__question {
+    font-weight: 700;
 }
-
-.toggle-icon.active {
-    transform: rotate(45deg); /* Rotates the icon */
+.questions__answer {
+    margin: 16px 0 0 0;
 }
-/* FAQ ENDS */
+/* QUESTIONS ENDS */
 
 /* MANABI */
 .manabi{
@@ -741,7 +730,7 @@ section {
 
     /* SERVICES */
     .services {
-        min-height: 60vh;
+        min-height: 80vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -749,8 +738,8 @@ section {
     }
     .service__cards-container {
         flex-direction: row;
-        justify-content: center;
-        width: 100%;
+        justify-content: space-evenly;
+        width: 85%;
     }
     /* SERVICES ENDS */
 
@@ -819,7 +808,7 @@ section {
         color: white;
         font-family: "Inter", sans-serif;
         border-radius: 10px;
-        width: 45%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
