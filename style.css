@@ -729,9 +729,8 @@ background-color: #d5d5d5;
 }
 .manabi__img{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 35%;
+    margin: auto;
+    width: 20%;
 }
 /* MANABI ENDS */
 
@@ -904,16 +903,10 @@ background-color: #d5d5d5;
 
     /* MANABI */
     .manabi__title{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     .manabi__img{
-        width: 20%;
-    }
-
-    @media (min-width: 1600px){
-        .manabi__img {
-            width: 15%;
-        }
+        width: 150px;
     }
     /* MANABI ENDS */
 }
