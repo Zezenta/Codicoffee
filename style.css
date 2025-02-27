@@ -10,7 +10,7 @@ html {
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-  *, *:before, *:after {
+*, *:before, *:after {
     box-sizing: inherit;
 }
 
@@ -23,10 +23,11 @@ body::-webkit-scrollbar {
     width: 6px; 
 }
 body::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.4); 
+    background-color: #830abb6c; 
+    transition: all .4s ease;
 }
 body::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: #830abbae; 
 }
 body::-webkit-scrollbar-track {
     background: transparent; 
@@ -222,6 +223,7 @@ section {
 }
 .service__card {
     background-color: #333;
+    box-shadow: 0 0 5px #0f0e0e;
     color: white;
     padding: 25px 20px 20px 20px;
     border-radius: 10px;
@@ -833,11 +835,14 @@ background-color: #d5d5d5;
     /* PRICES */
     .precios {
         align-items: center;
-        min-width: 80%;
+        justify-content: center;
+        margin-top: 20px;
+        width: 80%;
         max-width: 1080px;
+        min-height: 80vh;
     }
     .precios__container{
-        margin-top: 30px;
+        margin-top: 15px;   
         flex-direction: row;
         column-gap: 20px;
         width: 100%; 
@@ -850,14 +855,17 @@ background-color: #d5d5d5;
         width: 50%;
     }
     .box {
-        min-width: 0;
-        /* max-height: 340px;
-        min-height: 300px; */
+        min-width: 50%;
+        max-height: 255px;
+        min-height: 255px;
         justify-content: center;
     }
     /* PRICES ENDS */
 
     /* ABOUT */
+    .about {
+        min-height: 70vh;
+    }
     .about__members-container {
         flex-direction: row;
         justify-content: center;
