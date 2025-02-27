@@ -217,29 +217,55 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 20px;
 }
 .service__card {
     background-color: #333;
     color: white;
-    padding: 20px;
+    padding: 25px 20px 20px 20px;
     border-radius: 10px;
-    width: 300px;
-    height: 300px;
+    width: 80%;
+    max-width: 350px;
+    min-height: 310px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.service__card h3 {
+    margin: 0;
+    position: relative;
     text-align: center;
 }
-.service__cards h3 {
-    margin-top: 10px;
+.service__card h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px; 
+    width: 100%;
+    height: 7.5px; 
+    background: var(--purple); 
+    transform: scaleX(0) skew(-15deg); 
+    transform-origin: bottom left;
+    transition: transform 0.8s ease-in-out; 
+    border-radius: 3px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
-.service__cards p {
+.service__card h3.underline-active::after {
+    transform: scaleX(1) skew(-20deg);
+}
+.service__card p {
     font-size: 1rem;
 }
 .service__circle {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background-color: gray;
     border-radius: 50%;
-    margin: 0 auto 10px;
 }
 /* Services ends*/
 
@@ -394,9 +420,10 @@ section {
 .precios{
     display: flex;
     flex-direction: column;
-    padding: 35px; /* 20px up, 10px to the sides, 0px down */
+    padding: 20px;
     max-width: 750px;
     margin: auto;
+    border-bottom: .5px solid #999;
 }
 .precios h2{
     margin: 0;
@@ -409,6 +436,7 @@ section {
 }
 .precios__container__text ul{
     list-style: none;
+    padding-left: 35px;
 }
 
 .precios__container__text ul li {
@@ -443,18 +471,18 @@ section {
 .precios__container__graphics {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    width: 100%;
-    margin-top: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+    margin-top: 5px;
 }
 
 .box {
     padding: 17px;
     color: var(--white);
     border-radius: 6px;
-    flex-grow: 1;
     box-shadow: 0 0 5px #0f0e0e;
-    max-width: 50%;
+    min-width: 330px;
 
     display: flex;
     flex-direction: column;
@@ -469,14 +497,17 @@ section {
 .box h2 {
     margin: 0;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
+}
+.box--otros h2 {
+    font-size: 1.3rem;
 }
 .box ul{
     padding: 0;
     list-style: none;
     text-align: center;
 
-    font-size: 1.3rem;
+    font-size: .9rem;
 }
 .box ul li {
     margin-bottom: 10px;
@@ -720,7 +751,7 @@ background-color: #d5d5d5;
 
     /* PRESENTATION */
     .presentation {
-        height: 80vh;
+        height: 95vh;
         flex-direction: row;
         justify-content: space-around;
         text-align: left;
@@ -752,7 +783,7 @@ background-color: #d5d5d5;
 
     /* SERVICES */
     .services {
-        min-height: 80vh;
+        min-height: 85vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -760,8 +791,15 @@ background-color: #d5d5d5;
     }
     .service__cards-container {
         flex-direction: row;
-        justify-content: space-evenly;
-        width: 85%;
+        column-gap: 35px;
+    }
+    .service__card--center {
+        min-height: 325px;
+        max-height: 330px;
+    }
+    .service__card--side {
+        min-height: 290px;
+        max-height: 295px;
     }
     /* SERVICES ENDS */
 
@@ -794,93 +832,27 @@ background-color: #d5d5d5;
 
     /* PRICES */
     .precios {
-        align-items: center; /* Centers the elements horizontally */
+        align-items: center;
+        min-width: 80%;
+        max-width: 1080px;
     }
     .precios__container{
-        padding-top: 30px;
+        margin-top: 30px;
         flex-direction: row;
-        width: 80%;
-        flex: 1; /* Both take up equal space */
-        min-height: 40vh; /* Set a reasonable minimum height */
+        column-gap: 20px;
+        width: 100%; 
     }
-    .precios__container__text{
-        padding: 0px 50px;
-        width: 60%; /* Text takes more space */
-        flex: 1; /* Both take up equal space */
-        min-height: 40vh; /* Set a reasonable minimum height */
-        max-width: 1000px; /* So it doesn't overflow */
-    }
-    .precios__container__text p{
-        margin: 0px;
-    }
-
-    .precios__container__text p, .precios__container__text li{
-        font-size: 1.6vw;
-    }
-
-    .precios__container__graphics {
-        display: flex;
-        justify-content: center;
-        gap: 20px; /* Space between the elements */
-        width: 40%; /* Graphics take less space */
-    }
-    
-    .box {
-        padding: 10px 20px;
-        color: white;
-        font-family: "Inter", sans-serif;
-        border-radius: 10px;
+    .precios__container__text {
         width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
     }
-    .otros {
-        background-color: black;
+    .precios__container__graphics {
+        flex-direction: row;    
+        width: 50%;
     }
-    .nosotros {
-        background-color: #9b4faa;/
-    }
-    
-    .precios__container__graphics h2 {
-        text-align: center; /* Centers title horizontally */
-        margin: 0; /* Deletes margins so the text fits better */
-        display: flex;
-        justify-content: center;
-        text-align: center;
-    }
-    .otros h2{
-        font-size: 1.8vw;
-    }
-    .nosotros h2{
-        font-size: 2.5vw;
-    }
-
-    .precios__container__graphics ul{
-        padding-inline: 0;
-        list-style: none;
-    }
-    .nosotros ul{
-        margin: 16px 0 4px 0;
-    }
-    .precios__container__graphics li{
-        font-size: 1.5vw;
-        font-weight: bold;
-        margin: 0;
-    }
-
-    .otros span {
-        color: rgb(255, 0, 0);
-        font-size: 1.8vw;
-        font-weight: bold;
-        text-align: center;
-    }
-    .nosotros span {
-        color: rgb(30, 255, 0);
-        font-size: 3vw;
-        font-weight: bold;
-        text-align: center;
-        display: flex;
+    .box {
+        min-width: 0;
+        /* max-height: 340px;
+        min-height: 300px; */
         justify-content: center;
     }
     /* PRICES ENDS */

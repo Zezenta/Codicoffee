@@ -182,6 +182,30 @@ document.addEventListener("DOMContentLoaded", () => { //execute when the page is
 });
 
 
+// SERVICES ANIMATION
+document.addEventListener('DOMContentLoaded', function () {
+    const servicesSection = document.getElementById('services');
+    const serviceHeadings = document.querySelectorAll('.service__card h3');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Adding class to each h3
+                serviceHeadings.forEach(heading => {
+                    heading.classList.add('underline-active');
+                });
+
+                observer.disconnect();
+            }
+        });
+    }, {
+        threshold: 0.5 // Activate when service is 30% visible
+    });
+
+    observer.observe(servicesSection);
+});
+
+
 //#PORTFOLIO CODE
 //PORTFOLIO CARDS ANIMATION
 document.addEventListener("DOMContentLoaded", () => {
