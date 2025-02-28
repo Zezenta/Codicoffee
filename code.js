@@ -182,6 +182,30 @@ document.addEventListener("DOMContentLoaded", () => { //execute when the page is
 });
 
 
+// SERVICES ANIMATION
+document.addEventListener('DOMContentLoaded', function () {
+    const servicesSection = document.getElementById('services');
+    const serviceHeadings = document.querySelectorAll('.service__card h3');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Adding class to each h3
+                serviceHeadings.forEach(heading => {
+                    heading.classList.add('underline-active');
+                });
+
+                observer.disconnect();
+            }
+        });
+    }, {
+        threshold: 0.5 // Activate when service is 30% visible
+    });
+
+    observer.observe(servicesSection);
+});
+
+
 //#PORTFOLIO CODE
 //PORTFOLIO CARDS ANIMATION
 document.addEventListener("DOMContentLoaded", () => {
@@ -225,14 +249,92 @@ articles.forEach((_, index) => {
     placeholders[index].style.backgroundRepeat = "no-repeat";
 });
 
-//FAQ SECTION
-document.querySelectorAll('.faq-question').forEach(question => { //select all questions
-    question.addEventListener('click', () => { //add click event to each question
-        const answer = question.nextElementSibling; //uses nextElementSibling to select the answer
-        const icon = question.querySelector('.toggle-icon'); //select the icon inside the question
-        
-        //TOGGLE ACTIVE CLASS
-        answer.classList.toggle('active');
-        icon.classList.toggle('active');
+
+// ABOUT ARTICLES ANIMATION
+document.addEventListener("DOMContentLoaded", function () {
+    const aboutSection = document.querySelector('.about');
+    const aboutMembers = document.querySelectorAll('.about__members');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                aboutMembers.forEach((member, index) => {
+                    // Animation for articles
+                    member.classList.add('visible');
+
+                    // Underline animation
+                    setTimeout(() => {
+                        const h3 = member.querySelector('h3');
+                        h3.classList.add('underline-active');
+
+                        // Animation for li
+                        const lis = member.querySelectorAll('li');
+                        lis.forEach((li, liIndex) => {
+                            setTimeout(() => {
+                                li.classList.add('visible');
+                            }, 600 + liIndex * 300); // li delay
+                        });
+                    }, 600 + index); // underline delay
+                });
+
+                observer.unobserve(aboutSection); // Stop observing after first time
+            }
+        });
+    }, {
+        threshold: 0.3 // Activate when section is 30% visible
+    });
+
+    observer.observe(aboutSection);
+});
+
+// QUESTION ANIMATION
+document.addEventListener('DOMContentLoaded', () => {
+    const questionsSection = document.querySelector('.questions');
+    const detailsItems = document.querySelectorAll('.questions__item');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 300); 
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    detailsItems.forEach(item => {
+        observer.observe(item);
+    });
+});
+
+// DETAIL ANIMATION
+document.querySelectorAll(".questions__item").forEach((details) => {
+    const summary = details.querySelector("summary");
+    const content = details.querySelector(".questions__answer");
+
+    summary.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        if (details.hasAttribute("open")) {
+            // Close animation
+            content.style.height = `${content.scrollHeight}px`; // Set current height
+            setTimeout(() => {  // Animation delay
+                content.style.height = "0";
+                content.style.opacity = "0";
+                content.style.marginBottom = "0";
+            }, 10);
+            setTimeout(() => details.removeAttribute("open"), 300); // Esperar animación y cerrar
+        } else {
+            // open animation
+            details.setAttribute("open", "true");
+            content.style.height = "0"; // Reset to animate from 0
+            setTimeout(() => { // Animation delay
+                content.style.height = `${content.scrollHeight}px`;
+                content.style.opacity = "1";
+                content.style.marginBottom = "15px";
+            }, 10);
+        }
     });
 });

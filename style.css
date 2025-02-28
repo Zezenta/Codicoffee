@@ -10,7 +10,7 @@ html {
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-  *, *:before, *:after {
+*, *:before, *:after {
     box-sizing: inherit;
 }
 
@@ -23,10 +23,11 @@ body::-webkit-scrollbar {
     width: 6px; 
 }
 body::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.4); 
+    background-color: #830abb6c; 
+    transition: all .4s ease;
 }
 body::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: #830abbae; 
 }
 body::-webkit-scrollbar-track {
     background: transparent; 
@@ -210,45 +211,71 @@ section {
     text-align: center;
 }
 .services__title {
-    font-size: 28px;
+    font-size: clamp(2rem, 5vw, 2.5rem);
     margin-bottom: 20px;
 }
 .service__cards-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 20px;
 }
 .service__card {
     background-color: #333;
+    box-shadow: 0 0 5px #0f0e0e;
     color: white;
-    padding: 20px 10px;
+    padding: 25px 20px 20px 20px;
     border-radius: 10px;
-    width: 300px;
-    height: 300px;
+    width: 80%;
+    max-width: 350px;
+    min-height: 310px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.service__card h3 {
+    margin: 0;
+    position: relative;
     text-align: center;
 }
-.service__cards h3 {
-    margin-top: 10px;
+.service__card h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px; 
+    width: 100%;
+    height: 7.5px; 
+    background: var(--purple); 
+    transform: scaleX(0) skew(-15deg); 
+    transform-origin: bottom left;
+    transition: transform 0.8s ease-in-out; 
+    border-radius: 3px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
-.service__cards p {
-    font-size: 14px;
+.service__card h3.underline-active::after {
+    transform: scaleX(1) skew(-20deg);
+}
+.service__card p {
+    font-size: 1rem;
 }
 .service__circle {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background-color: gray;
     border-radius: 50%;
-    margin: 0 auto 10px;
 }
 /* Services ends*/
 
 
 /* -- PORTFOLIO -- */
 .portfolio {
-    /* background-color: var(--black); */
     background: rgb(86,8,122);
-    background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 40%);
+    background: radial-gradient(circle, rgba(86,8,122,1) 0%, rgba(34,35,36,1) 36%, rgba(0,0,0,1) 95%);
     color: var(--white);
     display: flex;
     flex-direction: column;
@@ -283,7 +310,7 @@ section {
 
     cursor: pointer;
     background: transparent;
-    box-shadow: 0px 0px 9px #2e2e2e;
+    box-shadow: 0px 0px 9px #1b1b1b;
 
     opacity: 0; /* Initially invisible */
     transform: translateX(-50px); /* Moves to the left */
@@ -378,31 +405,63 @@ section {
     outline: none;
     background-color: var(--purple);
     color: var(--white);
+    box-shadow: 0px 0px 5px #666;
     font-size: 1rem;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 300;
+    transition: transform .3s ease, text-shadow .4s ease;
 }
+.portfolio__btn:hover {
+    transform: scale(1.06);
+    text-shadow: 0px 0px 3px var(--white);
+}
+
 /* -- PORTFOLIO ENDS --*/
 
 /* PRICES */
 .precios{
     display: flex;
     flex-direction: column;
-    padding: 20px 10px 0px; /* 20px up, 10px to the sides, 0px down */
+    padding: 20px;
+    max-width: 750px;
+    margin: auto;
+    border-bottom: .5px solid #999;
 }
 .precios h2{
     margin: 0;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    text-align: center;
 }
 .precios__container{
     display: flex;
     flex-direction: column;
-    align-items: stretch;
 }
-.precios__container ul{
-    padding-left: 20px;
+.precios__container__text ul{
+    list-style: none;
+    padding-left: 35px;
 }
-.precios__container p, .precios_container li{
+
+.precios__container__text ul li {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    position: relative;
+}
+.precios__container__text ul li::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    width: 30px;
+    height: 30px;
+    background-image: url('data:image/svg+xml;utf8,%3Csvg version="1.0" xmlns="http://www.w3.org/2000/svg" width="640.000000pt" height="640.000000pt" viewBox="0 0 640.000000 640.000000" preserveAspectRatio="xMidYMid meet"%3E%3Cg transform="translate(0.000000,640.000000) scale(0.100000,-0.100000)" fill="%23830abb" stroke="none"%3E%3Cpath d="M3519 4430 c-377 -60 -752 -262 -1060 -571 -491 -493 -673 -1150 -429 -1550 37 -62 40 -64 76 -62 58 4 200 51 289 95 117 59 228 140 336 248 199 197 265 322 369 700 78 281 179 466 354 648 181 189 397 335 585 397 l53 17 -43 20 c-91 41 -190 59 -334 63 -77 2 -165 0 -196 -5z"/%3E%3Cpath d="M4275 4153 c-241 -57 -420 -159 -611 -348 -173 -173 -261 -324 -330 -573 -94 -335 -150 -467 -265 -624 -85 -114 -254 -280 -374 -365 -92 -65 -227 -140 -284 -158 -13 -4 -40 -14 -60 -22 l-36 -15 36 -19 c86 -44 196 -63 359 -63 239 -1 423 46 665 166 147 73 177 92 313 192 421 310 712 755 777 1186 34 218 0 425 -94 580 -38 64 -52 74 -96 63z"/%3E%3C/g%3E%3C/svg%3E');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.precios__container__text ul li strong {
+    color: var(--purple);
+}
+.precios__container__text p {
     font-size: 1.2rem;
+    text-align: center;
 }
 #precios__footer__text{
     font-size: 1.2rem;
@@ -414,67 +473,62 @@ section {
 .precios__container__graphics {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Space between the elements */
-    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+    margin-top: 5px;
 }
 
 .box {
-    padding: 10px;
-    color: white;
-    font-family: "Inter", sans-serif;
-    border-radius: 5px;
-    width: 50%;
+    padding: 17px;
+    color: var(--white);
+    border-radius: 6px;
+    box-shadow: 0 0 5px #0f0e0e;
+    min-width: 330px;
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-.otros {
-    background-color: black;
+.box--otros {
+    background-color: var(--black);
 }
-.nosotros {
-    background-color: #9b4faa;
-    justify-content: space-evenly;
+.box--nosotros {
+    background-color: var(--purple);
 }
-
-.precios__container__graphics h2 {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+.box h2 {
     margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
 }
-.otros h2 {
-    font-size: 5vw;
+.box--otros h2 {
+    font-size: 1.3rem;
 }
-.nosotros h2 {
-    font-size: 8vw;
-}
-
-.precios__container__graphics ul{
-    padding-inline: 0;
+.box ul{
+    padding: 0;
     list-style: none;
-}
-.nosotros ul{
-    margin: 4px 0 16px 0;
-}
-.precios__container__graphics li{
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 0; /* Deletes margins so the text fits better */
-}
+    text-align: center;
 
-.otros span {
-    color: rgb(255, 0, 0);
-    font-size: 7vw;
-    font-weight: bold;
-    text-align: center;
+    font-size: .9rem;
 }
-.nosotros span {
-    color: rgb(30, 255, 0);
-    font-size: 10vw;
-    font-weight: bold;
+.box ul li {
+    margin-bottom: 10px;
+}
+.box span {
     text-align: center;
-    display: flex;
-    justify-content: center;
+    
+}
+.box--otros span {
+    color: rgb(255, 55, 55);
+    font-size: 1.7rem;
+}
+.box--nosotros span {
+    color: rgb(30, 255, 0);
+    font-size: 3rem;
+}
+.precios button {
+    align-self: center;
+    padding: 1px 10px;
 }
 /* -- PRICES ENDS -- */
 
@@ -486,6 +540,9 @@ section {
     justify-content: center;
     align-items: center;
 }
+.about__title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+}
 .about__members-container {
     display: flex;
     flex-direction: column;
@@ -493,20 +550,32 @@ section {
     align-items: center;
     justify-content: center;
     color: #fff;
+    max-width: 370px;
 }
+
 .about__members {
     background: #333;
-    padding: 25px 5px;
+    padding: 28px 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
+    box-shadow: 0 0 5px #0f0e0e;
+    width: 100%;
     text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     row-gap: 20px;
+    /* For the appearance animation */
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
+/* Animation actived */
+.about__members.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .about__info-container {
     text-align: center;
     display: flex;
@@ -515,85 +584,132 @@ section {
     align-items: center;
     row-gap: 10px;
 }
+
 .about__members h3 {
     margin: 0;
+    position: relative;
+    
 }
+/* Underline animation */
+.about__members h3::after { 
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -15px; 
+    width: 100%;
+    height: 5px; 
+    background: var(--purple); 
+    transform: scaleX(0) skew(-15deg); 
+    transform-origin: bottom left;
+    transition: transform 0.5s ease-in-out; 
+    border-radius: 3px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+/* Underline animation actived */
+.about__members h3.underline-active::after {
+    transform: scaleX(1) skew(-20deg);
+}
+
 .about__members img {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
     border-radius: 50%;
+    /* box-shadow: 0px 0px 15px #0f0e0e; */
+    box-shadow: 0px 0px 5px 1.5px var(--purple);
 }
 .about__members ul {
     margin: 0;
     list-style: none;
-    margin-bottom: 12px;
+    align-self: flex-start;
+    padding: 10px 10px 0px 10px;
 }
 .about__members ul li {
     margin-bottom: 13px;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+
+    /* Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
+.about__members ul li.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.about__members ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-image: url('data:image/svg+xml;utf8,%3Csvg version="1.0" xmlns="http://www.w3.org/2000/svg" width="640.000000pt" height="640.000000pt" viewBox="0 0 640.000000 640.000000" preserveAspectRatio="xMidYMid meet"%3E%3Cg transform="translate(0.000000,640.000000) scale(0.100000,-0.100000)" fill="%23830abb" stroke="none"%3E%3Cpath d="M3519 4430 c-377 -60 -752 -262 -1060 -571 -491 -493 -673 -1150 -429 -1550 37 -62 40 -64 76 -62 58 4 200 51 289 95 117 59 228 140 336 248 199 197 265 322 369 700 78 281 179 466 354 648 181 189 397 335 585 397 l53 17 -43 20 c-91 41 -190 59 -334 63 -77 2 -165 0 -196 -5z"/%3E%3Cpath d="M4275 4153 c-241 -57 -420 -159 -611 -348 -173 -173 -261 -324 -330 -573 -94 -335 -150 -467 -265 -624 -85 -114 -254 -280 -374 -365 -92 -65 -227 -140 -284 -158 -13 -4 -40 -14 -60 -22 l-36 -15 36 -19 c86 -44 196 -63 359 -63 239 -1 423 46 665 166 147 73 177 92 313 192 421 310 712 755 777 1186 34 218 0 425 -94 580 -38 64 -52 74 -96 63z"/%3E%3C/g%3E%3C/svg%3E');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 /* -- ABOUT ENDS --*/
 
 
-/* FAQ */
-.preguntas-frecuentes{
-    width: 100%;
-    justify-self: center;
-    padding-top: 0;
-}
-.faq__title{
-    margin: 0;
-    margin-bottom: 25px;;
-}
+/* QUESTIONS */
+.questions {
+    background: rgb(131,10,187);
+    background: linear-gradient(0deg, rgba(131,10,187,1) 0%, rgba(75,25,99,1) 30%, rgba(34,35,36,1) 80%);
+    padding: 40px;
+    min-height: 90vh;
 
-.faq-item {
-    border: 2px solid #ccc;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    overflow: hidden;
-}
-.faq-question {
-    background: #f1f1f1;
-    padding: 5px;
-    cursor: pointer;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    font-weight: bold;
-    transition: background 0.1s; /* Time for background color to change when hovered */
-    font-size : 1.5rem;
 }
-.faq-question:hover {
-    background: #e0e0e0;
-}
-.toggle-icon {
-    margin-right: 10px;
-    font-size: 18px;
-    width: 20px;
+.questions__title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
     text-align: center;
+    color: var(--white);
+    margin: 0px 0px 30px 0px;
 }
-.faq-answer {
-    max-height: 0; /* Height of 0 so it's not visible */
-    overflow: hidden; /* Hides its content */
-    transition: max-height 0.5s ease, padding 0.5s ease; /* It makes the transition smooth, it takes 0.5 seconds, and it eases in and out */
-    padding-top: 0;
-    padding-bottom: 0;
-    font-size: 1.2rem;
+.questions__item-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    width: 100%;
+    max-width: 1100px;
 }
-.faq-answer.active {
-    max-height: 500px; /* Gives it space */
-    padding: 10px; /* Padding in the answer text */
+.questions__item {
+    background-color: var(--white);
+    padding: 15px 15px 0px 15px;
+    border-radius: 6px;
+    transition: all 1s ease;
+    /* Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
-.faq-answer p{
-    margin: 0; /* So it doesn't have a margin and the padding is the only space */
+.questions__item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.questions__item:hover {
+background-color: #d5d5d5;
 }
 
-.toggle-icon {
-    transition: transform 0.5s ease;
+.questions__question {
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
 }
-
-.toggle-icon.active {
-    transform: rotate(45deg); /* Rotates the icon */
+.questions__answer {
+    margin: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: height .3s ease, opacity 0.5s ease;
 }
-/* FAQ ENDS */
+/* QUESTIONS ENDS */
 
 /* MANABI */
 .manabi{
@@ -613,9 +729,8 @@ section {
 }
 .manabi__img{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 35%;
+    margin: auto;
+    width: 20%;
 }
 /* MANABI ENDS */
 
@@ -637,7 +752,7 @@ section {
 
     /* PRESENTATION */
     .presentation {
-        height: 80vh;
+        height: 95vh;
         flex-direction: row;
         justify-content: space-around;
         text-align: left;
@@ -669,7 +784,7 @@ section {
 
     /* SERVICES */
     .services {
-        min-height: 60vh;
+        min-height: 85vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -677,8 +792,15 @@ section {
     }
     .service__cards-container {
         flex-direction: row;
-        justify-content: center;
-        width: 100%;
+        column-gap: 35px;
+    }
+    .service__card--center {
+        min-height: 325px;
+        max-height: 330px;
+    }
+    .service__card--side {
+        min-height: 290px;
+        max-height: 295px;
     }
     /* SERVICES ENDS */
 
@@ -686,8 +808,12 @@ section {
     .portfolio {
         min-height: 90vh;
     }
+    .portfolio__title {
+        font-size: 2.5rem;
+    }
     .portfolio__articles-container {
-        max-width: 700px;
+        max-width: 750px;
+        padding: 5px 40px;
         gap: 25px;
     }
     .portfolio__text-container h2 {
@@ -707,106 +833,47 @@ section {
 
     /* PRICES */
     .precios {
-        align-items: center; /* Centers the elements horizontally */
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        width: 80%;
+        max-width: 1080px;
+        min-height: 80vh;
     }
     .precios__container{
-        padding-top: 30px;
+        margin-top: 15px;   
         flex-direction: row;
-        width: 80%;
-        flex: 1; /* Both take up equal space */
-        min-height: 40vh; /* Set a reasonable minimum height */
+        column-gap: 20px;
+        width: 100%; 
     }
-    .precios__container__text{
-        padding: 0px 50px;
-        width: 60%; /* Text takes more space */
-        flex: 1; /* Both take up equal space */
-        min-height: 40vh; /* Set a reasonable minimum height */
-        max-width: 1000px; /* So it doesn't overflow */
+    .precios__container__text {
+        width: 50%;
     }
-    .precios__container__text p{
-        margin: 0px;
-    }
-
-    .precios__container__text p, .precios__container__text li{
-        font-size: 1.6vw;
-    }
-
     .precios__container__graphics {
-        display: flex;
-        justify-content: center;
-        gap: 20px; /* Space between the elements */
-        width: 40%; /* Graphics take less space */
+        flex-direction: row;    
+        width: 50%;
     }
-    
     .box {
-        padding: 10px 20px;
-        color: white;
-        font-family: "Inter", sans-serif;
-        border-radius: 10px;
-        width: 45%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    .otros {
-        background-color: black;
-    }
-    .nosotros {
-        background-color: #9b4faa;/
-    }
-    
-    .precios__container__graphics h2 {
-        text-align: center; /* Centers title horizontally */
-        margin: 0; /* Deletes margins so the text fits better */
-        display: flex;
-        justify-content: center;
-        text-align: center;
-    }
-    .otros h2{
-        font-size: 1.8vw;
-    }
-    .nosotros h2{
-        font-size: 2.5vw;
-    }
-
-    .precios__container__graphics ul{
-        padding-inline: 0;
-        list-style: none;
-    }
-    .nosotros ul{
-        margin: 16px 0 4px 0;
-    }
-    .precios__container__graphics li{
-        font-size: 1.5vw;
-        font-weight: bold;
-        margin: 0;
-    }
-
-    .otros span {
-        color: rgb(255, 0, 0);
-        font-size: 1.8vw;
-        font-weight: bold;
-        text-align: center;
-    }
-    .nosotros span {
-        color: rgb(30, 255, 0);
-        font-size: 3vw;
-        font-weight: bold;
-        text-align: center;
-        display: flex;
+        min-width: 50%;
+        max-height: 255px;
+        min-height: 255px;
         justify-content: center;
     }
     /* PRICES ENDS */
 
     /* ABOUT */
+    .about {
+        min-height: 70vh;
+    }
     .about__members-container {
         flex-direction: row;
         justify-content: center;
-        column-gap: 30px;
+        column-gap: 60px;
         width: 100%;
+        max-width: 100%;
     }
     .about__title {
-        font-size: clamp(2rem, 7vw, 3.5rem);
+        font-size: 2.5rem;
     }
     .about__info-container {
         min-width: 100px;
@@ -814,8 +881,14 @@ section {
     .about__members {
         flex-direction: row;
         min-height: 270px;
-        min-width: 290px;
-        max-width: 450px;
+        max-width: 490px;
+    }
+    .about__info-container {
+        min-width: 140px;
+    }
+    .about__members ul {
+        align-self: center;
+        padding-left: 10px;
     }
     /* ABOUT ENDS */
     
@@ -830,16 +903,10 @@ section {
 
     /* MANABI */
     .manabi__title{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     .manabi__img{
-        width: 20%;
-    }
-
-    @media (min-width: 1600px){
-        .manabi__img {
-            width: 15%;
-        }
+        width: 150px;
     }
     /* MANABI ENDS */
 }
