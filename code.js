@@ -311,10 +311,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // DETAIL ANIMATION
 document.querySelectorAll(".questions__item").forEach((details) => {
-    const summary = details.querySelector("summary");
     const content = details.querySelector(".questions__answer");
 
-    summary.addEventListener("click", (e) => {
+    details.addEventListener("click", (e) => {
         e.preventDefault();
 
         if (details.hasAttribute("open")) {

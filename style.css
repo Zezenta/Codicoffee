@@ -682,6 +682,7 @@ section {
     padding: 15px 15px 0px 15px;
     border-radius: 6px;
     transition: all 1s ease;
+    cursor: pointer;
     /* Animation */
     opacity: 0;
     transform: translateY(20px);
@@ -692,12 +693,11 @@ section {
     transform: translateY(0);
 }
 .questions__item:hover {
-background-color: #d5d5d5;
+    background-color: #d5d5d5;
 }
 
 .questions__question {
     font-weight: 700;
-    cursor: pointer;
     transition: all 0.3s ease;
     margin-bottom: 15px;
 }
@@ -889,15 +889,6 @@ background-color: #d5d5d5;
         padding-left: 10px;
     }
     /* ABOUT ENDS */
-    
-    /* FAQ */
-    .preguntas-frecuentes{
-        width: 80%; /* Doesnt occupy the whole screen in desktpo*/
-    }
-    .faq-question {
-        padding: 15px; /* More padding in desktop*/
-    }
-    /* FAQ ENDS */
 
     /* MANABI */
     .manabi__title{
