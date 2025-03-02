@@ -312,23 +312,26 @@ document.addEventListener('DOMContentLoaded', () => {
 // DETAIL ANIMATION
 document.querySelectorAll(".questions__item").forEach((details) => {
     const content = details.querySelector(".questions__answer");
+    const triangle = details.querySelector(".questions__triangle"); // Triangle icon
 
     details.addEventListener("click", (e) => {
         e.preventDefault();
 
         if (details.hasAttribute("open")) {
-            // Close animation
+            //CLOSE ANIMATION
             content.style.height = `${content.scrollHeight}px`; // Set current height
             setTimeout(() => {  // Animation delay
                 content.style.height = "0";
                 content.style.opacity = "0";
                 content.style.marginBottom = "0";
             }, 10);
+            triangle.classList.remove("active"); // Reset to original rotatin
             setTimeout(() => details.removeAttribute("open"), 300); // Esperar animación y cerrar
         } else {
-            // open animation
+            // OPEN ANIMATION
             details.setAttribute("open", "true");
             content.style.height = "0"; // Reset to animate from 0
+            triangle.classList.add("active"); // Rotate triangle
             setTimeout(() => { // Animation delay
                 content.style.height = `${content.scrollHeight}px`;
                 content.style.opacity = "1";

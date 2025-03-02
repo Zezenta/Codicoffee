@@ -653,59 +653,92 @@ section {
 
 
 /* QUESTIONS */
-.questions {
-    background: rgb(131,10,187);
-    background: linear-gradient(0deg, rgba(131,10,187,1) 0%, rgba(75,25,99,1) 30%, rgba(34,35,36,1) 80%);
-    padding: 40px;
-    min-height: 90vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.questions { /* Container */
+    background: rgb(131,10,187); /* Background color */
+    background: linear-gradient(0deg, rgba(131,10,187,1) 0%, rgba(75,25,99,1) 30%, rgba(34,35,36,1) 80%); /* Gradient background */
+    padding: 40px; /* Padding around the container */
+    min-height: 90vh; /* Minimum height of the container */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange children in a column */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
 }
 .questions__title {
-    font-size: clamp(2rem, 5vw, 2.5rem);
-    text-align: center;
-    color: var(--white);
-    margin: 0px 0px 30px 0px;
+    font-size: clamp(2rem, 5vw, 2.5rem); /* Responsive font size */
+    text-align: center; /* Center text */
+    color: var(--white); /* Text color */
+    margin: 0px 0px 30px 0px; /* Margin around the title */
 }
 .questions__item-container {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-    width: 100%;
-    max-width: 1100px;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange children in a column */
+    row-gap: 15px; /* Space between rows */
+    width: 100%; /* Full width */
+    max-width: 1100px; /* Maximum width */
 }
 .questions__item {
-    background-color: var(--white);
-    padding: 15px 15px 0px 15px;
-    border-radius: 6px;
-    transition: all 1s ease;
-    cursor: pointer;
-    /* Animation */
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    background-color: var(--white); /* Background color */
+    padding: 15px 15px 0px 15px; /* Padding around the item */
+    border-radius: 6px; /* Rounded corners */
+    transition: all 1s ease; /* Transition for all properties */
+    cursor: pointer; /* Pointer cursor on hover */
+    opacity: 0; /* Initially invisible */
+    transform: translateY(20px); /* Move down */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for opacity and transform */
 }
 .questions__item.visible {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
 }
 .questions__item:hover {
-    background-color: #d5d5d5;
+    background-color: #d5d5d5; /* Background color on hover */
 }
 
 .questions__question {
-    font-weight: 700;
-    transition: all 0.3s ease;
-    margin-bottom: 15px;
+    font-weight: 700; /* Bold text */
+    transition: all 0.3s ease; /* Transition for all properties */
+    margin-bottom: 15px; /* Margin below the question */
+    -webkit-user-select: none; /* Prevent text selection in WebKit browsers */
+    -moz-user-select: none; /* Prevent text selection in Mozilla browsers */
+    -ms-user-select: none; /* Prevent text selection in Internet Explorer */
+    user-select: none; /* Prevent text selection in modern browsers */
 }
 .questions__answer {
-    margin: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: height .3s ease, opacity 0.5s ease;
+    margin: 0; /* No margin */
+    overflow: hidden; /* Hide overflow */
+    opacity: 0; /* Initially invisible */
+    transition: height .3s ease, opacity 0.5s ease; /* Transition for height and opacity */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* delete default triangle in all browsers */
+summary::-webkit-details-marker {
+    display: none;
+}
+summary::marker {
+    content: "";
+}
+.questions__question::-webkit-details-marker {
+    display: none;
+}
+.questions__question::marker {
+    content: "";
+}
+/* manually create triangle */	
+.questions__triangle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: solid #000; 
+    border-width: 0 2px 2px 0; /* Create a triangle */
+    transform: rotate(-45deg); /* Original rotation */
+    transition: transform 0.3s ease; /* Transition */
+    margin-right: 10px; /* Space between the triangle and the text */
+}
+.questions__triangle.active {
+    transform: rotate(45deg); /* Rotate it 90 degrees to make it look down*/
 }
 /* QUESTIONS ENDS */
 
