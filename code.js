@@ -41,6 +41,22 @@ const observer = new IntersectionObserver(entries => { //create observer
     threshold: 0.6 //60% of the section must be visible
 });
 sections.forEach(section => observer.observe(section));
+//NAVBAR LINKS SCROLLING
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default anchor click behavior
+        const sectionId = this.getAttribute('href');
+        const section = document.querySelector(sectionId);
+        const offset = 70; // Adjust this value to match the height of your navbar
+        const sectionTop = section.offsetTop - offset;
+
+        window.scrollTo({
+            top: sectionTop,
+            behavior: 'smooth'
+        });
+    });
+});
+
 
 //#PRESENTATION CODE
 //CHANGE PRESENTATION TEXT DEPENDING ON WHETHER THE SCREEN IS SMALL OR LARGE
