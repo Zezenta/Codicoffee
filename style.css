@@ -935,3 +935,50 @@ summary::marker {
     }
     /* MANABI ENDS */
 }
+
+/* WHATSAPP BUTTON */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--purple);
+    color: white;
+    padding: 18px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    font-size: 1.3rem;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    background-color: #9a0ed8;
+}
+
+.whatsapp-btn svg {
+    width: 42px;
+    height: 42px;
+}
+
+.whatsapp-btn span {
+    font-weight: 500;
+}
+
+/* Make button smaller on mobile */
+@media (max-width: 768px) {
+    .whatsapp-btn {
+        padding: 14px 28px;
+        font-size: 1.1rem;
+    }
+    
+    .whatsapp-btn svg {
+        width: 36px;
+        height: 36px;
+    }
+}
