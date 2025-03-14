@@ -305,13 +305,14 @@ section {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    height: auto; /* Remove fixed height to let content dictate */
 
     cursor: pointer;
     background: transparent;
     box-shadow: 0px 0px 9px #1b1b1b;
 
-    opacity: 0; /* Initially invisible */
-    transform: translateX(-50px); /* Moves to the left */
+    opacity: 0;
+    transform: translateX(-50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out, opacity 0.4s ease-in-out;
 
     position: relative;
@@ -338,19 +339,30 @@ section {
 /* IMAGE WRAPPER */
 .portfolio__img-wrapper {
     width: 100%;
+    height: 100px; /* Reduced height for mobile */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 /* IMAGE STYLING */
 .portfolio__img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* maintain aspect ratio */
+    object-fit: cover; /* Changed from contain to cover */
     transition: transform 0.4s ease-out;
 }
 /* TEXT CONTAINER */
 .portfolio__text-container {
-    padding: 15px;
+    padding: 12px;
     background-color: var(--white);
-    border-radius: 0px 0px 6px 6px; /* rounded corners */
+    border-radius: 0px 0px 6px 6px;
+    width: 100%;
+    height: 120px; /* Increased from 100px to 120px for mobile */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 /* IMAGE HOVER EFFECT */
 .portfolio__article:hover .portfolio__img {
@@ -362,13 +374,18 @@ section {
     margin: 0;
     font-size: 1.3rem;
     color: var(--purple);
-    word-break: break-all; /* break long words */
+    word-break: normal;
+    word-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
 }
 .portfolio__text-container p {
-    margin: 15px 0 5px 0;
+    margin: 8px 0 0 0;
     font-size: .75rem;
-    letter-spacing: 1.5px;
+    line-height: 1.4;
     color: #000;
+    overflow: hidden;
 }
 /* PLACEHOLDER STYLING */
 .portfolio__placeholder {
@@ -762,6 +779,17 @@ summary::marker {
     display: block;
     margin: auto;
     width: 20%;
+    margin-bottom: 90px; /* Increased from 60px to 90px for more space on mobile */
+}
+
+@media (min-aspect-ratio: 4/3) { /* For desktop */
+    .manabi__title{
+        font-size: 1.5rem;
+    }
+    .manabi__img{
+        width: 150px;
+        margin-bottom: 0; /* Remove extra space for desktop */
+    }
 }
 /* MANABI ENDS */
 
@@ -855,6 +883,8 @@ summary::marker {
     .portfolio__text-container p {
         white-space: normal;
         font-size: .9rem;
+        line-height: 1.4; /* Added line height for better readability */
+        letter-spacing: 1.5px;
     }
     .portfolio__article:hover .portfolio__img {
         transform: scale(2.5);
@@ -980,5 +1010,42 @@ summary::marker {
     .whatsapp-btn svg {
         width: 36px;
         height: 36px;
+    }
+}
+
+@media (min-aspect-ratio: 4/3) { /* For desktop */
+    .portfolio__img-wrapper {
+        height: 180px; /* Keep original height for desktop */
+    }
+}
+
+@media (min-aspect-ratio: 4/3) { /* For desktop */
+    .portfolio__text-container {
+        height: 100px; /* Keep original height for desktop */
+    }
+}
+
+/* Specific styles for small screens */
+@media screen and (max-width: 375px) {
+    .portfolio__text-container p {
+        font-size: 0.67rem;
+        line-height: 1.3;
+        letter-spacing: 0.5px;
+    }
+    
+    .portfolio__text-container h2 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-aspect-ratio: 4/3) { /* For desktop */
+    .portfolio__text-container {
+        height: 100px;
+    }
+    
+    .portfolio__text-container p {
+        font-size: .9rem;
+        line-height: 1.4;
+        letter-spacing: 1.5px;
     }
 }
