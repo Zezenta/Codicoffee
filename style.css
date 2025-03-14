@@ -359,10 +359,10 @@ section {
     background-color: var(--white);
     border-radius: 0px 0px 6px 6px;
     width: 100%;
-    height: 120px; /* Increased from 100px to 120px for mobile */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    flex: 1;
 }
 /* IMAGE HOVER EFFECT */
 .portfolio__article:hover .portfolio__img {
@@ -381,10 +381,13 @@ section {
     -ms-hyphens: auto;
 }
 .portfolio__text-container p {
-    margin: 8px 0 0 0;
+    margin: 0;
     font-size: .75rem;
     line-height: 1.4;
     color: #000;
+    display: flex;
+    align-items: center;
+    flex: 1;
 }
 /* PLACEHOLDER STYLING */
 .portfolio__placeholder {
