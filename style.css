@@ -185,7 +185,7 @@ section {
     width: 100%;
     height: 59px;
     fill: none;
-    stroke: rgb(44, 160, 255);
+    stroke: var(--purple);
     stroke-width: 10px;
     stroke-dasharray: 300;
     stroke-dashoffset: 300;

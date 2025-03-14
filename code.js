@@ -79,7 +79,7 @@ window.addEventListener('resize', adjustPresentationText); //adjust text on resi
 
 //CHANGING WORDS DYNAMICALLY
 document.addEventListener("DOMContentLoaded", () => {
-    const words = ["Restaurante", "Discoteca", "Hotel", "Profesión"];
+    const words = ["Clínica", "Profesión", "Hotel", "Taller"];
     let wordElement = document.getElementById("dynamic-word"); //select the word element
     let brushElement = document.querySelector(".TextShape-node"); //select the brush element
     let brushPath = document.querySelector(".TextShape-node svg path"); //select the path element
@@ -124,16 +124,16 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => { //execute when the page is loaded
     //IMAGE SOURCES
     const cellphoneImages = [
-        "https://zezenta.shop/placeholders/SHARE/phoneone.png",
-        "https://zezenta.shop/placeholders/SHARE/phonetwo.png",
-        "https://zezenta.shop/placeholders/SHARE/phonethree.png",
-        "https://zezenta.shop/placeholders/SHARE/phonefour.png"
+        "clinicaphone.png",
+        "abogadosphone.png",
+        "hotelphone.png",
+        "automotrizphone.png"
     ];
     const laptopImages = [
-        "https://zezenta.shop/placeholders/SHARE/laptopone.png",
-        "https://zezenta.shop/placeholders/SHARE/laptoptwo.png",
-        "https://zezenta.shop/placeholders/SHARE/laptopthree.png",
-        "https://zezenta.shop/placeholders/SHARE/laptopfour.png"
+        "clinicalaptop.png",
+        "abogadoslaptop.png",
+        "hotellaptop.png",
+        "automotrizlaptop.png"
     ];
 
     //FOR CYCLING
