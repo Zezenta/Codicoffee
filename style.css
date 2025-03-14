@@ -385,7 +385,6 @@ section {
     font-size: .75rem;
     line-height: 1.4;
     color: #000;
-    overflow: hidden;
 }
 /* PLACEHOLDER STYLING */
 .portfolio__placeholder {
@@ -839,6 +838,10 @@ summary::marker {
         max-width: 60%;
         height: auto;
     }
+
+    .portfolio__img-wrapper {
+        height: 180px; /* Keep original height for desktop */
+    }
     /* PRESENTATION ENDS */
 
     /* SERVICES */
@@ -877,6 +880,11 @@ summary::marker {
         padding: 5px 40px;
         gap: 25px;
     }
+
+    .portfolio__text-container {
+        min-height: 120px; /* Changed from fixed height to min-height */
+    }
+
     .portfolio__text-container h2 {
         font-size: 1.6rem;
     }
@@ -884,7 +892,6 @@ summary::marker {
         white-space: normal;
         font-size: .9rem;
         line-height: 1.4; /* Added line height for better readability */
-        letter-spacing: 1.5px;
     }
     .portfolio__article:hover .portfolio__img {
         transform: scale(2.5);
@@ -1013,17 +1020,6 @@ summary::marker {
     }
 }
 
-@media (min-aspect-ratio: 4/3) { /* For desktop */
-    .portfolio__img-wrapper {
-        height: 180px; /* Keep original height for desktop */
-    }
-}
-
-@media (min-aspect-ratio: 4/3) { /* For desktop */
-    .portfolio__text-container {
-        height: 100px; /* Keep original height for desktop */
-    }
-}
 
 /* Specific styles for small screens */
 @media screen and (max-width: 375px) {
@@ -1035,17 +1031,5 @@ summary::marker {
     
     .portfolio__text-container h2 {
         font-size: 1.1rem;
-    }
-}
-
-@media (min-aspect-ratio: 4/3) { /* For desktop */
-    .portfolio__text-container {
-        height: 100px;
-    }
-    
-    .portfolio__text-container p {
-        font-size: .9rem;
-        line-height: 1.4;
-        letter-spacing: 1.5px;
     }
 }
