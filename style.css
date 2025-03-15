@@ -546,6 +546,8 @@ section {
 .precios button {
     align-self: center;
     padding: 1px 10px;
+    font-family: Inter;
+    font-weight: bold;
 }
 /* -- PRICES ENDS -- */
 
