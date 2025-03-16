@@ -3,9 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codicoffee</title>
+    <title>Codicoffee - Sitios Web Profesionales para Impulsar tu Negocio</title>
+    <meta name="description" content="Páginas Web profesionales a la medida al mejor precio del país. Contáctanos y cotiza ya!">
+    <link rel="stylesheet" href="style.css">
+
+    <meta property="og:title" content="Codicoffee | Sitios Web Profesionales para Impulsar tu Negocio">
+    <meta property="og:description" content="En Codicoffee hacemos una página web para tu negocio, a los mejores precios del país. Contáctanos y cotiza ya!">
+    <meta property="og:image" content="https://zezenta.shop/placeholders/SHARE/logo.jpg">
+    <meta property="og:url" content="https://codicoffee.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Codicoffee">
+
+    <!-- Preconnect to google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCo3FwrK3iLTcviYwY.woff2" as="font" type="font/woff2" crossorigin="anonymous"> <!-- Preload font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"> <!-- Load font -->
+    <link rel="icon" href="src/logo-codicoffee-transparente - favicon.png">
 </head>
 <body>
+    <header class="header">
+        <nav class="header__navbar"> 
+            <div class="header__logo-container">
+                <img src="src/logo-codicoffee-transparente.png" alt="logo" class="header__img">
+                <h1 class="header__logo">Codicoffee</h1>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                ☰
+            </button>
+            <ul class="header__links-container">
+                <li><a href="#presentation" class="nav-link" data-section="presentation">Inicio</a></li>
+                <li><a href="#services" class="nav-link" data-section="services">Servicios</a></li>
+                <li><a href="#portfolio" class="nav-link" data-section="portfolio">Portafolio</a></li>
+                <li><a href="#precios" class="nav-link" data-section="precios">Precios</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">Contacto</a></li>
+                <li><a href="#questions" class="nav-link" data-section="questions">Preguntas Frecuentes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Presentation -->
+        <section class="presentation section" id="presentation">
+            <div class="presentation__text">
+                <h2 id="presentationtext">
+                    Hacemos un sitio web 
+                    <span> <!-- Line Break -->
+                        para tu 
+                        <span class="presentation__text__container"> <!-- To have word and brush stroke in the same space for it to be easy to edit -->
+                            <span id="dynamic-word">Negocio</span>
+                            <span class="TextShape-node">
+                                <svg id="brush-stroke" viewBox="0 0 300 60" preserveAspectRatio="none">
+                                    <path d="M 0,56.43 c 31.625,-1.5675000000000026 63.25,-4.845000000000006 126.5,-6.269999999999996 c 63.25,-1.4249999999999972 96.14000000000001,7.105427357601002e-15 126.5,0.5700000000000003 c 6.072000000000003,0.11399999999999721 -4.807000000000016,1.6244999999999976 -5.060000000000002,1.7100000000000009" vector-effect="non-scaling-stroke"></path>
+                                </svg>
+                            </span>
+                        </span>
+                    </span>
+                </h2>
+                <p id="presentation__small__text">Somos un par de estudiantes de informática que se dedican a hacer sitios webs para pequeños y medianos negocios, a los mejores precios</p>
+            </div>
+            <div class="presentation__icon-container">
+                <svg id="presentation__cellphoneSVG" fill="#000000" width="140px" height="200px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <g id="cellphone-images">
+                        <image id="current-cellphone-image" href="https://zezenta.shop/placeholders/SHARE/clinicaphone.png" x="2.15" y="3" width="19.8" height="18" />
+                    </g>
+                    <path d="M6,4.5 C6,3.11928813 7.11928813,2 8.5,2 L15.5113578,2 C16.8920696,2 18.0113578,3.11928813 18.0113578,4.5 L18.0113578,19.5 C18.0113578,20.8807119 16.8920696,22 15.5113578,22 L8.5,22 C7.11928813,22 6,20.8807119 6,19.5 L6,4.5 Z M8.5,3 C7.67157288,3 7,3.67157288 7,4.5 L7,19.5 C7,20.3284271 7.67157288,21 8.5,21 L15.5113578,21 C16.3397849,21 17.0113578,20.3284271 17.0113578,19.5 L17.0113578,4.5 C17.0113578,3.67157288 16.3397849,3 15.5113578,3 Z" stroke="black" stroke-width="0.25"/>
+                </svg>
+                
+                <svg id="presentation__laptopSVG" xmlns="http://www.w3.org/2000/svg" version="1.0" width="200px" height="200px" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+                    <g id="laptop-images">
+                        <image id="current-laptop-image" href="https://zezenta.shop/placeholders/SHARE/clinicalaptop.png" x="70" y="50" width="375" height="375" />
+
+                    </g>
+                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+                        <path d="M659 3966 c-74 -51 -70 37 -67 -1230 3 -1127 3 -1135 24 -1163 11 -15 40 -38 64 -50 l44 -23 1836 0 1836 0 44 22 c24 13 53 36 64 51 21 28 21 36 24 1163 3 1267 7 1179 -67 1230 l-36 24 -1865 0 -1865 0 -36 -24z m1935 -22 c19 -18 21 -7 34 -16z m1737 -153 l29 -29 0 -1010 0 -1010 -26 -31 -26 -31 -1748 0 -1748 0 -26 31 -26 31 0 1010 0 1010 29 29 29 29 1742 0 1742 0 29 -29z"/>
+                        <path d="M292 1393 c-86 -42 -102 -161 -32 -228 l31 -30 2269 0 2269 0 31 30 c71 68 54 187 -33 229 -32 14 -106 16 -746 16 -692 0 -711 -1 -700 -19 7 -10 9 -26 6 -35 -6 -15 -77 -16 -827 -16 -750 0 -821 1 -827 16 -3 9 -1 25 6 35 11 18 -8 19 -701 19 -641 0 -716 -2 -746 -17z"/>
+                    </g>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Nuestros Servicios -->
+        <section class="services section" id="services">
+            <h2 class="services__title">Nuestros Servicios</h2>
+            <div class="service__cards-container">
+                <article class="service__card service__card--side">
+                    <img src="https://zezenta.shop/placeholders/SHARE/code.gif" alt="lupa" class="service__circle">
+                    <h3>Desarrollo Web</h3>
+                    <p>Diseñamos, desarrollamos, y activamos sitios web. Pueden ser a partir de un ejemplo, o pueden ser totalmente personalizados según el cliente necesite (sin precio extra).</p>
+                </article>
+                <article class="service__card service__card--center">
+                    <img src="https://zezenta.shop/placeholders/SHARE/lupa.gif" alt="lupa" class="service__circle">
+                    <h3>SEO</h3>
+                    <p>Nos aseguramos de que tu sitio web se muestre entre los primeros resultados de las búsquedas de Google; así, tu negocio llegará a más gente que busque cosas como "Restaurantes en Manta" o "Abogados en Portoviejo".</p>
+                </article>
+                <article class="service__card service__card--side">
+                    <img src="https://zezenta.shop/placeholders/SHARE/pc.gif" alt="lupa" class="service__circle">
+                    <h3>Mantenimiento de Servidores</h3>
+                    <p>Estamos atentos de que tu sitio web esté activo 24/7. También tenemos en cuenta de que tu sitio web cargue rápido, y sin demoras.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="portfolio section" id="portfolio">
+            <h2 class="portfolio__title">Portafolio</h2>
+            <div class="portfolio__articles-container">
+                <article class="portfolio__article" id="intuitive">
+                    <a href="https://codicoffee.com/clinica" class="portfolio__link" target="_blank">
+                        <div class="portfolio__img-wrapper">
+                            <img src="https://zezenta.shop/placeholders/SHARE/clinicalaptop.png" alt="example 1" class="portfolio__img">
+                        </div>
+                        <div class="portfolio__text-container">
+                            <h2>Clínica</h2>
+                            <p><strong>Ejemplo de una página web informativa de una clínica dental. Con servicios, contacto, y ubicación.</strong></p>
+                        </div>
+                        <span class="portfolio__placeholder">CLÍNICA</span>
+                    </a>
+                </article>
     
+                <article class="portfolio__article" id="sysadmina">
+                    <a href="https://codicoffee.com/automotriz" class="portfolio__link" target="_blank">
+                        <div class="portfolio__img-wrapper">
+                            <img src="https://zezenta.shop/placeholders/SHARE/automotrizlaptop.png" alt="example 2" class="portfolio__img">
+                        </div>
+                        <div class="portfolio__text-container">
+                            <h2>Automotriz</h2>
+                            <p><strong>Página web de un taller automotriz con catálogo de productos, contacto, y testimonios.</strong></p>
+                        </div>
+                        <span class="portfolio__placeholder">TALLER</span>
+                    </a>
+                </article>
+    
+                <article class="portfolio__article" id="innovative">
+                    <a href="https://codicoffee.com/hotel" class="portfolio__link" target="_blank">
+                        <div class="portfolio__img-wrapper">
+                            <img src="https://zezenta.shop/placeholders/SHARE/hotellaptop.png" alt="example 3" class="portfolio__img">
+                        </div>
+                        <div class="portfolio__text-container">
+                            <h2>Hotel</h2>
+                            <p><strong>Información de Hotel Resort, con sistema para consultar fechas disponibles, y contacto.</strong></p>
+                        </div>
+                        <span class="portfolio__placeholder">HOTEL</span>
+                    </a>
+                </article>
+
+                <article class="portfolio__article" id="ironclad">
+                    <a href="https://codicoffee.com/abogados" class="portfolio__link" target="_blank">
+                        <div class="portfolio__img-wrapper">
+                            <img src="https://zezenta.shop/placeholders/SHARE/abogadoslaptop.png" alt="example 3" class="portfolio__img">
+                        </div>
+                        <div class="portfolio__text-container">
+                            <h2>Abogados</h2>
+                            <p><strong>Firma de Abogados, con sistema para recibir mensajes de clientes, y uso de correos.</strong></p>
+                        </div>
+                        <span class="portfolio__placeholder">ABOGACÍA</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Precios -->
+        <section class="precios section" id="precios">
+            <h2>Precios</h2>
+            <div class="precios__container">
+                <div class="precios__container__text">
+                    <p>Gracias a nuestra estructura flexible y a que somos un equipo de estudiantes apasionados por el desarrollo web, podemos ofrecer los mejores precios del país.</p>
+                    <ul>
+                        <li>💰 Sin tarifas fijas, ni costos inflados. <strong>Solo pagas por lo que realmente necesitas.</strong></li>
+                        <li><strong>📄 Sin límite de páginas.</strong> No te cobramos por cantidad, sino por funcionalidad y calidad.</li>
+                        <li>🚀 Webs profesionales desde solo $100. Otros pueden cobrarte $200, $400 o incluso $800 por lo mismo. Nosotros te ofrecemos <strong>la mejor opción, al mejor precio.</strong>
+                </div>
+                <aside class="precios__container__graphics">
+                    <article class="box box--otros">
+                        <h2>Otros Proveedores</h2>
+                        <ul>
+                            <li>Precios inflados</li>
+                            <li>Costo extra por funciones innecesarias</li>
+                            <li>Tarifas fijas exageradas</li>
+                        </ul>
+                        <span>$200 $400 $800</span>
+                    </article>
+                    <article class="box box--nosotros">
+                        <h2>Nosotros</h2> 
+                        <ul>
+                            <li>Pagas por lo que necesitas, ni un dólar más</li>
+                            <li>Ética de trabajo transparente</li>
+                            <li>Planes flexibles</li>
+                        </ul>
+                        <span>$100</span>
+                    </article>
+                </aside>
+            </div>
+            <p id="precios__footer__text">Si buscas una página web bien hecha, sin pagar de más, somos tu mejor alternativa. ¡Contáctanos y cotiza gratis!</p>
+            <button class="portfolio__btn" onclick="location.href='#questions'">Aprende más sobre los precios</button>
+        </section>
+
+        <section class="about section" id="about">
+            <h2 class="about__title">Sobre Nosotros</h2>
+            <div class="about__members-container">
+                <article class="about__members">
+                    <div class="about__info-container">
+                        <img src="https://avatars.githubusercontent.com/u/101609455?v=4" alt="">
+                        <h3>José Véliz</h3>
+                    </div>
+                    <ul>
+                        <li>Administrador de Servidores</li>
+                        <li>Campeón Nacional de Informática 2023</li>
+                        <li>Estudiante de Ing en Computación en la ESPAM</li>
+                        <li>Contacto: jose@codicoffee.com</li>
+                    </ul>
+                </article>
+                <article class="about__members">
+                    <div class="about__info-container">
+                        <img src="https://avatars.githubusercontent.com/u/103219972?v=4" alt="">
+                        <h3>Adrián Zambrano</h3>
+                    </div>
+                    <ul>
+                        <li>Experto en diseño web y desarrollo frontend</li>
+                        <li>Diseñador UI</li>
+                        <li>Estudiante de Ing de Software en la ULEAM</li>
+                        <li>Contacto: adrian@codicoffee.com</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section questions" id="questions">
+            <h2 class="questions__title">Preguntas Frecuentes</h2>
+            <div class="questions__item-container">
+                <details class="questions__item">
+                    <summary class="questions__question"><span class="questions__triangle"></span>¿Hay algún cobro mensual por mantener activa la web?</summary>
+                    <p class="questions__answer">
+                        Sí. Este precio es de $5 para páginas web normales, cuya función es principalmente informativa. Si la web tiene funciones y sistemas más avanzados y complejos, este precio puede aumentar.
+                    </p>
+                </details>
+                
+                <details class="questions__item">
+                    <summary class="questions__question"><span class="questions__triangle"></span>¿Los precios incluyen impuestos? ¿Facturan?</summary>
+                    <p class="questions__answer">
+                        Como somos una microempresa informal, no cobramos impuestos de ningún tipo. Todo pago se hace por medio de transferencias bancarias normales.
+                    </p>
+                </details>
+    
+                <details class="questions__item">
+                    <summary class="questions__question"><span class="questions__triangle"></span>¿La web la tengo que diseñar yo o la diseñan ustedes?</summary>
+                    <p class="questions__answer">
+                        ¡Como prefieras! Si ya tienes una idea de cómo quieres que se vea tu sitio web, la podemos implementar por ti. Si no quieres preocuparte por esto, nosotros nos encargamos de todo, pidiéndote opiniones durante el diseño. Puedes estar tan involucrado en el diseño como quieras.
+                    </p>
+                </details>
+    
+                <details class="questions__item">
+                    <summary class="questions__question"><span class="questions__triangle"></span>¿Cuánto tiempo demoran en construir la web?</summary>
+                    <p class="questions__answer">
+                        Depende de cuánto contenido tengamos que construir. Para una página web promedio, tardamos alrededor de 2 semanas. Este tiempo puede variar dependiendo de la cantidad de trabajo y nuestras responsabilidades personales (¡somos universitarios después de todo!).
+                    </p>
+                </details>
+    
+                <details class="questions__item">
+                    <summary class="questions__question"><span class="questions__triangle"></span>¿Tengo que pagar por adelantado?</summary>
+                    <p class="questions__answer">
+                        Pedimos la mitad del pago antes del desarrollo y la otra mitad cuando hayamos terminado el trabajo.
+                    </p>
+                </details>
+    
+                <details class="questions__item">
+                    <summary class="questions__question"><span class="questions__triangle"></span>Si quiero cambiar de proveedor o encargarme yo mismo del sitio web, ¿puedo hacerlo?</summary>
+                    <p class="questions__answer">
+                        Sí, si decides cambiar de proveedor o encargarte tú mismo del mantenimiento, te enviaremos todo el código de tu sitio web para que puedas gestionarlo sin problemas.
+                    </p>
+                </details>
+    
+                <details class="questions__item">
+                    <summary class="questions__question"><span class="questions__triangle"></span>¿Desarrollan versiones tanto para computadora como para celulares?</summary>
+                    <p class="questions__answer">
+                        Sí, todas las webs que hacemos son adaptables tanto para computadoras como para celulares. No hay costo extra por esto.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <section class="manabi"> <!-- Doesnt need a .section because it doesn't have a navbar link -->
+            <h2 class="manabi__title"><span id="manabi__green">HECHO E</span><span id="manabi__red">N MANABÍ</span></h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Bandera_Provincia_Manab%C3%AD.svg" class="manabi__img">
+        </section>
+    </main>
+    
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/593999405155" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+        </svg>
+        <span>Contáctanos</span>
+    </a>
+    <script src="code.js"></script>
 </body>
 </html>

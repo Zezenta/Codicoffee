@@ -11,3 +11,5 @@ node_modules
 nohup.out
 *.7z
 *.exe
+*.gif
+codingnotes.md
