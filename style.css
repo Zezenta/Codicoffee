@@ -318,14 +318,13 @@ section {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: auto; /* Remove fixed height to let content dictate */
 
     cursor: pointer;
     background: transparent;
     box-shadow: 0px 0px 9px #1b1b1b;
 
-    opacity: 0;
-    transform: translateX(-50px);
+    opacity: 0; /* Initially invisible */
+    transform: translateX(-50px); /* Moves to the left */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out, opacity 0.4s ease-in-out;
 
     position: relative;
@@ -352,30 +351,19 @@ section {
 /* IMAGE WRAPPER */
 .portfolio__img-wrapper {
     width: 100%;
-    height: 100px; /* Reduced height for mobile */
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
 }
 /* IMAGE STYLING */
 .portfolio__img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Changed from contain to cover */
+    object-fit: contain; /* maintain aspect ratio */
     transition: transform 0.4s ease-out;
 }
 /* TEXT CONTAINER */
 .portfolio__text-container {
-    padding: 12px;
+    padding: 15px;
     background-color: var(--white);
-    border-radius: 0px 0px 6px 6px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex: 1;
+    border-radius: 0px 0px 6px 6px; /* rounded corners */
 }
 /* IMAGE HOVER EFFECT */
 .portfolio__article:hover .portfolio__img {
@@ -387,20 +375,13 @@ section {
     margin: 0;
     font-size: 1.3rem;
     color: var(--purple);
-    word-break: normal;
-    word-wrap: break-word;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
+    word-break: break-all; /* break long words */
 }
 .portfolio__text-container p {
-    margin: 0;
+    margin: 15px 0 5px 0;
     font-size: .75rem;
-    line-height: 1.4;
+    letter-spacing: 1.5px;
     color: #000;
-    display: flex;
-    align-items: center;
-    flex: 1;
 }
 /* PLACEHOLDER STYLING */
 .portfolio__placeholder {
