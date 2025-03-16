@@ -333,6 +333,27 @@ section {
     border-radius: 6px;
 }
 
+.portfolio__link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ensure the hover effects work with the link */
+.portfolio__article:hover .portfolio__img,
+.portfolio__link:hover .portfolio__img {
+    transform: scale(3.5);
+    filter: brightness(0.8);
+}
+
+.portfolio__article:hover .portfolio__placeholder,
+.portfolio__link:hover .portfolio__placeholder {
+    opacity: 1;
+}
+
 /* ARTICLES ON THE RIGHT MOVE TO THE LEFT */
 .portfolio__article:nth-child(2n) {
     transform: translateX(50px); /* Moves to the right */
