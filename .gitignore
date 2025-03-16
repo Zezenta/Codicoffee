@@ -13,3 +13,8 @@ nohup.out
 *.exe
 *.gif
 codingnotes.md
+*.log
+Hotel/
+Ficticio-Automotriz/
+Ficticio-Abogados/
+Odontologo-Ficticio/
