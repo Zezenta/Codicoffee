@@ -23,12 +23,36 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://zezenta.shop/placeholders/SHARE/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://zezenta.shop/placeholders/SHARE/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://zezenta.shop/placeholders/SHARE/favicon-16x16.png">
+    <link rel="icon" sizes="any" href="https://zezenta.shop/placeholders/SHARE/favicon.ico">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "WebSite",
+                "@id": "https://codicoffee.com#website",
+                "name": "Codicoffee",
+                "url": "https://codicoffee.com",
+                "publisher": { "@id": "https://codicoffee.com#organization" }
+              },
+              {
+                "@type": "Organization",
+                "@id": "https://codicoffee.com#organization",
+                "name": "Codicoffee",
+                "url": "https://codicoffee.com",
+                "logo": "https://codicoffee.com/logo.png"
+              }
+            ]
+          }
+    </script>
+        
 </head>
 <body>
     <header class="header">
         <nav class="header__navbar"> 
             <div class="header__logo-container">
-                <img src="https://zezenta.shop/placeholders/SHARE/logo-codicoffee-transparente.png" alt="logo" class="header__img">
+                <img src="https://zezenta.shop/placeholders/SHARE/logo-codicoffee-transparente.webp" alt="logo" class="header__img" loading="lazy">
                 <h1 class="header__logo">Codicoffee</h1>
             </div>
             <button class="menu-toggle" id="menuToggle">
@@ -68,15 +92,14 @@
             <div class="presentation__icon-container">
                 <svg id="presentation__cellphoneSVG" fill="#000000" width="140px" height="200px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <g id="cellphone-images">
-                        <image id="current-cellphone-image" href="https://zezenta.shop/placeholders/SHARE/clinicaphone.png" x="2.15" y="3" width="19.8" height="18" />
+                        <image id="current-cellphone-image" href="https://zezenta.shop/placeholders/SHARE/clinicaphone.webp" x="2.15" y="3" width="19.8" height="18" loading="lazy"/>
                     </g>
                     <path d="M6,4.5 C6,3.11928813 7.11928813,2 8.5,2 L15.5113578,2 C16.8920696,2 18.0113578,3.11928813 18.0113578,4.5 L18.0113578,19.5 C18.0113578,20.8807119 16.8920696,22 15.5113578,22 L8.5,22 C7.11928813,22 6,20.8807119 6,19.5 L6,4.5 Z M8.5,3 C7.67157288,3 7,3.67157288 7,4.5 L7,19.5 C7,20.3284271 7.67157288,21 8.5,21 L15.5113578,21 C16.3397849,21 17.0113578,20.3284271 17.0113578,19.5 L17.0113578,4.5 C17.0113578,3.67157288 16.3397849,3 15.5113578,3 Z" stroke="black" stroke-width="0.25"/>
                 </svg>
                 
                 <svg id="presentation__laptopSVG" xmlns="http://www.w3.org/2000/svg" version="1.0" width="200px" height="200px" viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
                     <g id="laptop-images">
-                        <image id="current-laptop-image" href="https://zezenta.shop/placeholders/SHARE/clinicalaptop.png" x="70" y="50" width="375" height="375" />
-
+                        <image id="current-laptop-image" href="https://zezenta.shop/placeholders/SHARE/clinicalaptop.webp" x="70" y="50" width="375" height="375" loading="lazy"/>
                     </g>
                     <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
                         <path d="M659 3966 c-74 -51 -70 37 -67 -1230 3 -1127 3 -1135 24 -1163 11 -15 40 -38 64 -50 l44 -23 1836 0 1836 0 44 22 c24 13 53 36 64 51 21 28 21 36 24 1163 3 1267 7 1179 -67 1230 l-36 24 -1865 0 -1865 0 -36 -24z m1935 -22 c19 -18 21 -7 34 -16z m1737 -153 l29 -29 0 -1010 0 -1010 -26 -31 -26 -31 -1748 0 -1748 0 -26 31 -26 31 0 1010 0 1010 29 29 29 29 1742 0 1742 0 29 -29z"/>
@@ -91,17 +114,17 @@
             <h2 class="services__title">Nuestros Servicios</h2>
             <div class="service__cards-container">
                 <article class="service__card service__card--side">
-                    <img src="https://zezenta.shop/placeholders/SHARE/code.gif" alt="lupa" class="service__circle">
+                    <img src="https://zezenta.shop/placeholders/SHARE/code.gif" alt="lupa" class="service__circle" loading="lazy">
                     <h3>Desarrollo Web</h3>
                     <p>Diseñamos, desarrollamos, y activamos sitios web. Pueden ser a partir de un ejemplo, o pueden ser totalmente personalizados según el cliente necesite (sin precio extra).</p>
                 </article>
                 <article class="service__card service__card--center">
-                    <img src="https://zezenta.shop/placeholders/SHARE/lupa.gif" alt="lupa" class="service__circle">
+                    <img src="https://zezenta.shop/placeholders/SHARE/lupa.gif" alt="lupa" class="service__circle" loading="lazy">
                     <h3>SEO</h3>
                     <p>Nos aseguramos de que tu sitio web se muestre entre los primeros resultados de las búsquedas de Google; así, tu negocio llegará a más gente que busque cosas como "Restaurantes en Manta" o "Abogados en Portoviejo".</p>
                 </article>
                 <article class="service__card service__card--side">
-                    <img src="https://zezenta.shop/placeholders/SHARE/pc.gif" alt="lupa" class="service__circle">
+                    <img src="https://zezenta.shop/placeholders/SHARE/pc.gif" alt="lupa" class="service__circle" loading="lazy">
                     <h3>Mantenimiento de Servidores</h3>
                     <p>Estamos atentos de que tu sitio web esté activo 24/7. También tenemos en cuenta de que tu sitio web cargue rápido, y sin demoras.</p>
                 </article>
@@ -114,7 +137,7 @@
                 <article class="portfolio__article" id="intuitive">
                     <a href="https://codicoffee.com/clinica" class="portfolio__link" target="_blank">
                         <div class="portfolio__img-wrapper">
-                            <img src="https://zezenta.shop/placeholders/SHARE/clinicalaptop.png" alt="example 1" class="portfolio__img">
+                            <img src="https://zezenta.shop/placeholders/SHARE/clinicalaptop.webp" alt="example 1" class="portfolio__img" loading="lazy">
                         </div>
                         <div class="portfolio__text-container">
                             <h2>Clínica</h2>
@@ -127,7 +150,7 @@
                 <article class="portfolio__article" id="sysadmina">
                     <a href="https://codicoffee.com/automotriz" class="portfolio__link" target="_blank">
                         <div class="portfolio__img-wrapper">
-                            <img src="https://zezenta.shop/placeholders/SHARE/automotrizlaptop.png" alt="example 2" class="portfolio__img">
+                            <img src="https://zezenta.shop/placeholders/SHARE/automotrizlaptop.webp" alt="example 2" class="portfolio__img" loading="lazy">
                         </div>
                         <div class="portfolio__text-container">
                             <h2>Automotriz</h2>
@@ -140,7 +163,7 @@
                 <article class="portfolio__article" id="innovative">
                     <a href="https://codicoffee.com/hotel" class="portfolio__link" target="_blank">
                         <div class="portfolio__img-wrapper">
-                            <img src="https://zezenta.shop/placeholders/SHARE/hotellaptop.png" alt="example 3" class="portfolio__img">
+                            <img src="https://zezenta.shop/placeholders/SHARE/hotellaptop.webp" alt="example 3" class="portfolio__img" loading="lazy">
                         </div>
                         <div class="portfolio__text-container">
                             <h2>Hotel</h2>
@@ -153,7 +176,7 @@
                 <article class="portfolio__article" id="ironclad">
                     <a href="https://codicoffee.com/abogados" class="portfolio__link" target="_blank">
                         <div class="portfolio__img-wrapper">
-                            <img src="https://zezenta.shop/placeholders/SHARE/abogadoslaptop.png" alt="example 3" class="portfolio__img">
+                            <img src="https://zezenta.shop/placeholders/SHARE/abogadoslaptop.webp" alt="example 3" class="portfolio__img" loading="lazy">
                         </div>
                         <div class="portfolio__text-container">
                             <h2>Abogados</h2>
@@ -206,7 +229,7 @@
             <div class="about__members-container">
                 <article class="about__members">
                     <div class="about__info-container">
-                        <img src="https://avatars.githubusercontent.com/u/101609455?v=4" alt="">
+                        <img src="https://avatars.githubusercontent.com/u/101609455?v=4" alt="" loading="lazy">
                         <h3>José Véliz</h3>
                     </div>
                     <ul>
@@ -218,7 +241,7 @@
                 </article>
                 <article class="about__members">
                     <div class="about__info-container">
-                        <img src="https://avatars.githubusercontent.com/u/103219972?v=4" alt="">
+                        <img src="https://avatars.githubusercontent.com/u/103219972?v=4" alt="" loading="lazy">
                         <h3>Adrián Zambrano</h3>
                     </div>
                     <ul>
@@ -287,7 +310,7 @@
 
         <section class="manabi"> <!-- Doesnt need a .section because it doesn't have a navbar link -->
             <h2 class="manabi__title"><span id="manabi__green">HECHO E</span><span id="manabi__red">N MANABÍ</span></h2>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Bandera_Provincia_Manab%C3%AD.svg" class="manabi__img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Bandera_Provincia_Manab%C3%AD.svg" class="manabi__img" loading="lazy">
         </section>
     </main>
     
