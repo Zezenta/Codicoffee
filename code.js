@@ -124,16 +124,16 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => { //execute when the page is loaded
     //IMAGE SOURCES
     const cellphoneImages = [
-        "https://zezenta.shop/placeholders/SHARE/clinicaphone.png",
-        "https://zezenta.shop/placeholders/SHARE/abogadosphone.png",
-        "https://zezenta.shop/placeholders/SHARE/hotelphone.png",
-        "https://zezenta.shop/placeholders/SHARE/automotrizphone.png"
+        "https://zezenta.shop/placeholders/SHARE/clinicaphone.webp",
+        "https://zezenta.shop/placeholders/SHARE/abogadosphone.webp",
+        "https://zezenta.shop/placeholders/SHARE/hotelphone.webp",
+        "https://zezenta.shop/placeholders/SHARE/automotrizphone.webp"
     ];
     const laptopImages = [
-        "https://zezenta.shop/placeholders/SHARE/clinicalaptop.png",
-        "https://zezenta.shop/placeholders/SHARE/abogadoslaptop.png",
-        "https://zezenta.shop/placeholders/SHARE/hotellaptop.png",
-        "https://zezenta.shop/placeholders/SHARE/automotrizlaptop.png"
+        "https://zezenta.shop/placeholders/SHARE/clinicalaptop.webp",
+        "https://zezenta.shop/placeholders/SHARE/abogadoslaptop.webp",
+        "https://zezenta.shop/placeholders/SHARE/hotellaptop.webp",
+        "https://zezenta.shop/placeholders/SHARE/automotrizlaptop.webp"
     ];
 
     //FOR CYCLING
