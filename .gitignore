@@ -14,8 +14,9 @@ nohup.out
 *.gif
 codingnotes.md
 *.log
+*.ico
 Hotel/
 Ficticio-Automotriz/
 Ficticio-Abogados/
 Odontologo-Ficticio/
-*.ico
+DentaSonrisa/
