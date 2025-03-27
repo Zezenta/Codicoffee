@@ -144,6 +144,12 @@ section {
     color: white;
     min-height: 70vh;
 }
+@supports (-webkit-touch-callout: none){
+    .presentation{
+        background-attachment: scroll;
+    }
+}
+
 .presentation__text {
     display: flex;
     flex-direction: column;
