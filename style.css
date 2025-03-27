@@ -144,6 +144,12 @@ section {
     color: white;
     min-height: 70vh;
 }
+@supports (-webkit-touch-callout: none){
+    .presentation{
+        background-attachment: scroll;
+    }
+}
+
 .presentation__text {
     display: flex;
     flex-direction: column;
@@ -784,9 +790,11 @@ summary::marker {
 .manabi{
     padding: 0;
     padding-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .manabi__title{
-    justify-self: center;
     font-size: 1rem;
     margin-bottom: 0;
 }
